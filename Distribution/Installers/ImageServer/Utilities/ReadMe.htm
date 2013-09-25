@@ -1,0 +1,1952 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>SQL Server Express Utility - ReadMe</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;}
+@font-face
+	{font-family:"Palatino Linotype";
+	panose-1:2 4 5 2 5 5 5 3 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+span.EmailStyle19
+	{font-family:Arial;
+	color:windowtext;}
+ /* Page Definitions */
+ @page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in .5in .5in .5in;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US>
+
+<div class=Section1>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:16.0pt;font-family:Arial'>SQL Server Express Utility</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-family:Arial'>Version 1.0.2130</span></p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>Overview</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>SQL Server Express Utility is a tool for interacting
+with SQL Server. It provides many features including:</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Connect
+to the main instance or user-instance of SQL Server.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Create/Attach/Detach/List
+databases on the server.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Upgrade
+database files to match the version of the server.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Execute
+SQL statements via the console (similar to SQLCMD) or the console window (UI).</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Retrieve
+the version of SQL Server running.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Enable/Disable
+trace flags (e.g. to trace SQL statements sent to the server by any client app)</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>List
+the instances of SQL Server on the local machine or on remote machines.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Checkpoint
+and shrink a database</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Measure
+the performance of executing specific queries using the timer function (console
+mode).</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Create
+and playback lists of SQL commands to be executed by the server.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Log
+all input/output.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Even though the tool was built with focus on SQL Server
+Express (by default, it tries to connect to the SQLEXPRESS instance on the
+local machine), the tool can also be used to connect to other versions of SQL
+Server, including SQL Server 2000 and earlier (see the –main option for more
+information).</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><b><span style='font-family:Arial'>Important note</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><i><span style='font-family:"Palatino Linotype";
+color:navy'>&nbsp;</span></i></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><i><span style='font-family:Arial;color:navy'>Microsoft
+Corporation does not provide any technical or customer support services for SQL
+Server Express Utility</span></i></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><b><span style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><b><span style='font-family:Arial'>&nbsp;</span></b></p>
+
+<b><span style='font-size:12.0pt;line-height:150%;font-family:Arial'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><b><span style='font-family:Arial'>Major changes from the
+Beta2 version</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- All help is now
+build into SSEUtil.exe. For help on a specific command type SSEUtil help
+&lt;commandname&gt;.</span></p>
+
+<p class=MsoNormal style='text-indent:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- Create new
+databases (-create command)</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- List the child
+instances running (-childlist command)</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- Interactive
+console window (-consolewnd command)   </span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- History commands
+in the SQL console (!history show/clear/save)</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- Set the
+connection timeout (-timeout option)</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- Set the command
+timeout (-commandtimeout) command</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- Script files can
+contain variables that will be expanded before sending to the server.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- You can specify
+the name of the database when attaching (see -attach command)   </span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>e.g. SSEUtil
+-attach c:\northwind.mdf NW</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- Most commands can
+now work with a file path (.mdf) or a database name.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>- Detach command
+syntax changed. You can provide either a path or name of DB to detach</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<b><span style='font-size:12.0pt;line-height:150%;font-family:Arial'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='line-height:150%'><b><span style='font-family:Arial'>Command
+summary</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>Microsoft
+(R) SQL Server Express Utility v1.0.2130</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>Copyright
+(C) Microsoft Corporation 2005. All rights reserved.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-size:8.0pt;font-family:"Courier New"'>Usage:
+SSEUtil &lt;command&gt; [&lt;args&gt;] [&lt;options&gt;]</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>Commands</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-a[ttach] &lt;dbpath&gt; [&lt;dbname&gt;]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Attach a database file to the server using the name if specified.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-create &lt;dbpath&gt;|name=&lt;dbname&gt; [&lt;dbname&gt;]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Create a new database given the database path or name.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-l[ist]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Lists all databases on the server.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-d[etach] &lt;dbpath[*]&gt;|name=&lt;dbname&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Detaches database(s) by path or name.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-u[pgrade] &lt;dbpath&gt;|&lt;directory&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Upgrades an individual database file or all database files in a folder.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-t[race] +|-[&lt;number&gt;]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Enables or disables the specified trace number for all client connections.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Exclude number to trace SQL commands. Output written to the server log.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-childlist</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Lists the child (user) instances of SQL Server.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-c[onsole]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Console mode. Allows user to type SQL statements to run on the server.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-consolewnd</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>     
+Launches the interactive console window.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-run &lt;filepath&gt; [&lt;var1&gt;=&lt;val1&gt;[,...]]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Runs a command file (SQL or extended commands) with the variables provided.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-version</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Displays the version reported by SQL Server.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-listsrv [remote]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Lists the local or remote instances of SQL Server.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-shrink &lt;dbpath&gt;|name=&lt;dbname&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Shrinks the given database and runs checkpoint.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<span style='font-size:8.0pt;font-family:"Courier New"'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>Options</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-m[ain]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Use the main instance. (Default is to use the child instance.)</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-child [&lt;username&gt;]</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Connect to child instance for the current or specified user.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>  </span><span
+lang=FR style='font-size:8.0pt;font-family:"Courier New"'>-s[erver]
+&lt;server&gt;[\&lt;instance&gt;][,&lt;port&gt;]</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-size:8.0pt;font-family:"Courier New"'>    
+</span><span style='font-size:8.0pt;font-family:"Courier New"'>Specify the
+server, instance name and/or port to connect to.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+e.g. -s .\SQLEXPRESS will connect to SSE on the local machine.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-user &lt;username&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Specify the user name to connect with.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-pwd &lt;password&gt; | -pwd?</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Specify the password to connect with, or prompt for it.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+e.g. -s mysrv -user sa -pwd? will prompt for a password.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-timeout &lt;seconds&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Specify the connection timeout in seconds. 0 for infinite.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-cmdtimeout &lt;seconds&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Specify the command timeout in seconds. 0 for infinite.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'> 
+-log &lt;logfile&gt;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>    
+Write all program input/output to the specified log file.</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:8.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<span style='font-size:10.0pt;font-family:"Courier New"'><br clear=all
+style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><b><span style='font-family:Arial'>Command information</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>Here are some
+examples of the commands that SSEUtil offers. For more information, see the
+help in the tool itself by typing ‘SSEUtil help’ or ‘SSEUtil help
+&lt;commandname&gt;’ on the command line.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Creating databases (-create command).</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            Use
+this command to create a new database or database file. </span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -create
+c:\northwind.mdf</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Attaching database files (-a command).</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Attach a given database file to the server. This is
+done by using the ADO.NET/SQL AttachDbFileName support.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -a
+c:\northwind.mdf</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>The command above will lets SQL Server generate a name
+for the database based on the file path. To specify a name explicitly, use:</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -a c:\northwind.mdf
+nw</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>In the example above, northwind.mdf will be attached
+under the name ‘nw’. </span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Listing databases (–l command).</span></b></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:Arial'>            </span></p>
+
+<p class=MsoNormal style='text-indent:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>List the databases
+on the server. </span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:63.0pt;text-align:justify;text-justify:
+inter-ideograph;text-indent:-27.0pt;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>Note: Local databases attached via
+the AttachDBFile name functionality of ADO.NET have a name that is based on the
+file path as seen below at 5.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -l</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>1. master</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>2. tempdb</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>3. model</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>4. msdb</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>5. c:\northwind.mdf</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<b><span style='font-size:10.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Detaching databases (-d command).</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Use this command to detach a database from the server.
+Detach takes the path of the data file to detach or a database name.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:Arial'>            Detach by partial path:</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -d
+c:\mydata\*</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Detached
+'c:\mydata\northwind.mdf' successfully</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Detached 'c:\mydata
+\pubs.mdf' successfully</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            Detach
+by database name:</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -d name=northwind</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Detached
+'c:\mydata\northwind.mdf' successfully</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>      </span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Upgrading database files (-u command).</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>In order to work properly with SQL Server, the data
+files created by previous versions might need to be upgraded. This command
+allows you to upgrade one or more files to the version required by the given
+server. The upgrade process is done entirely by the server.</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:"Courier New"'> </span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -u
+c:\mydatabases</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Processed 'northwind.mdf'</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Enabling trace flags (-t command).</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>This command allows you to enable/disable certain trace
+flags on the server. Trace flags are always applied on all client connections
+as seen in the example below (-1 is added to all trace flags).</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>            Here is an example on how to enable tracing of SQL commands
+sent to the server by any client application: </span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -t +</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Trace flags {4054,-1} were
+set to True</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Typically, the trace output is written to the server
+log. For the user instance of SSE, this is under \documents and settings\local
+settings\application data\...\SQLEXPRESS. For the main instance, it is under
+the SQL installation path under LOG.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<b><span style='font-size:10.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Retrieving the server version information (-version
+command).</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>This command will query the server for the version
+information. The output is the information directly as returned by the server.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -version</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Microsoft SQL Server 2005 -
+9.00.0000 (Intel X86)</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>        Oct 26 2005 20:39:57</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>        Copyright (c)
+1988-2005 Microsoft Corporation</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>        Express Edition on
+Windows NT 5.1 (Build 2600: Service Pack 2)</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Shrinking a database (-shrink command).</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>This command currently works by pointing it at a file
+path or specifying a database name. It’ll attach the given database, issue a
+shrink command to the server. The difference in size will be reported as
+follows:</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -shrink
+c:\northwind.mdf</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>File                Initial
+size   Final size</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>------------------------------------------------</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>northwind.mdf       12032
+KB        4352 KB</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>northwind_log.LDF   1024
+KB         768 KB</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Listing the child (user) instances of a server (-childlist
+command).</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil –childlist</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>User           
+Pipe                                   ProcessId   Status</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>----------------------------------------------------------------------------</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>DOMAIN\USER    
+\\.\pipe\BC6A3A8C-EAC4-3E\tsql\query   1132        alive</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<b><span style='font-size:10.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Retrieving the list of SQL Server instances (-listsrv
+command).</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:Arial'>This command
+allows the user to list the instances of SQL server either locally or on remote
+machines.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:Arial'>            -- Local --</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:Arial'>This will
+list the instances of SQL Server installed on the local machine whether they
+are currently running or not.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -listsrv</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>MYMACHINE\SQLEXPRESS</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Courier New"'>      -- </span><span
+style='font-size:10.0pt;font-family:Arial'>Remote --</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:Arial'>            </span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:Arial'>This will
+list the instances of SQL Server running on remote machines. Note that the list
+might not be complete as this relies on a UDP broadcast techniques and not all
+servers might be able to reply withing the time allocated.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='margin-left:41.4pt;background:#E5E5E5;border-collapse:collapse'>
+ <tr style='height:70.65pt'>
+  <td width=672 valign=top style='width:7.0in;padding:0in 5.4pt 0in 5.4pt;
+  height:70.65pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>Gathering
+  list of remote servers...</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>      </span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>ABAL01</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>BELL01</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>CLIENT5\DB1</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>[...]</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<b><span style='font-size:10.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Enabling logging of all input/output (-log option)</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>            This
+command allows the user to have all input/output to the tool written to a
+specified log file. </span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:10.0pt;font-family:"Courier New"'>sseutil -version -log
+c:\log.txt</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span lang=FR style='font-size:10.0pt;font-family:Arial'>            </span><span
+style='font-size:10.0pt;font-family:Arial'>It is also supported in the console
+via the <i>!logopen </i>and <i>!logclose</i> commands.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>      </span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -c</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:10.0pt;font-family:"Courier New"'>Console mode. </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>Type 'help' for more information.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>1&gt; !logopen c:\log.txt</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Log started.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>1&gt; !list</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>1. master</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>2. tempdb</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>3. model</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>4. msdb</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>1&gt; !logclose</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Log stopped.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<b><span style='font-size:10.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Connecting to the main instance (-main option) </span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>By default, SSEUtil will try to connect to the
+user-instance. User-instances are instances of sqlservr.exe running under the
+current user’s account. This is done by adding the ‘User Instance=true’ to the
+ADO.NET connection string. In order to connect to the ‘main’ instance or
+service instance, use the –main switch. You’ll need to use that switch with
+connecting to older SKUs or to SKUs on which user instances are disabled.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>            The following example will list all DBs on the main instance
+as opposed to the user instance:</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>sseutil -m -l</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Connecting to a child (user) instance running under a
+different user name (-child option).</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>This command allows the user to connect to the user
+instance (child instance) that is running under a different user name. By
+default, SSEUtil will try to connect to the user instance for the current user.
+</span></p>
+
+<p class=MsoNormal style='margin-left:.25in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>The most common place where this can be useful is the
+Web scenario where the user instance of SSE runs under a different user name
+than the one currently logged in.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -l -child
+MYDOMAIN\username</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Instance
+'\\.\pipe\2137BF9E-9128-5C\tsql\query' was found.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>1. master</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>2. tempdb</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>3. model</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>4. msdb</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>5. c:\mydata.mdf</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<b><span style='font-size:10.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Connecting to a remote machine with password prompt (-s and
+–pwd[?] options)</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:150%'><span style='font-size:10.0pt;
+line-height:150%;font-family:Arial'>            </span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+text-indent:.5in;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>SSEUtil allows you to specify the password in 2 ways.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:1.25in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>1)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Using
+the –pwd switch you can specify the password to use: -pwd hello</span></p>
+
+<p class=MsoNormal style='margin-left:1.25in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>2)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>Using
+the –pdw? Switch you can let SSEUtil prompt you for password. This avoids
+displaying the password on the command line.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>You can specify the server\instance name to use to
+connect using the –s switch.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -s
+imagine\Northwind -user sa -pwd? -m -c</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Enter password for user
+'sa': ***********</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Console mode. Type 'help'
+for more information.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt;&nbsp;</span></p>
+
+<p class=MsoNormal style='text-indent:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='text-indent:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></b></p>
+
+<b><span style='font-size:10.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'> Console mode (-c command)</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>The console mode allows users to enter commands that
+will run against the server. Here’s some information about the console as
+reported by its help:</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:9.0pt;font-family:"Courier New"'>C:\dd&gt;sseutil -c</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:9.0pt;font-family:"Courier New"'>Console mode. </span><span
+style='font-size:9.0pt;font-family:"Courier New"'>Type 'help' for more
+information.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>The console supports 2 types
+of commands: (1) SQL, (2) Extended</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>SQL Commands</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   SQL commands are sent
+directly to the server. Type the command(s)</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   you want to send. Once all
+commands are entered, type GO [ENTER]</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   on a line to send them to
+the server.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>Extended commands</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   Extended commands are
+interpreted by the console first.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   All extended commands are
+preceded with a '!' character</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !attach &lt;dbpath&gt;
+[&lt;dbname&gt;]</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Attaches a database
+file to the server using the name if specified.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !create
+&lt;dbpath&gt;|name=&lt;dbname&gt; [&lt;dbname&gt;]</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>     Creates a new database
+given the database path or name.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !detach
+&lt;dbpath[*]&gt;|name=&lt;dbname&gt;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Detaches database(s) by
+path or name.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !list</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Lists all databases on
+the server.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !timer</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Turns the timer on/off.
+Will report the execution time of each command.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !commandTimeout
+timeout_in_seconds</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Sets the command
+timeout. 0 sets the timeout to unlimited.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !run commandfile
+[var1=val1,...]</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Run the given command
+file optionally passing in variable declarations.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !consolewnd</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Shows the interactive
+console window.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !history show [count]</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Shows all command
+history or the last 'count' commands.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !history save filepath</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Saves the command
+history to a file for later playback (see the 'run' command).</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !history clear</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>      Clears the command
+history.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:9.0pt;font-family:"Courier New"'>   !logopen filepath |
+!logclose</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>      Opens/closes log file.
+All input/output is written to the log.</span></p>
+
+<span style='font-size:10.0pt;line-height:150%;font-family:"Courier New"'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Here’s an example of how to use the console to execute
+some commands, query for data and have timing information reported:</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -c</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span lang=FR
+style='font-size:10.0pt;font-family:"Courier New"'>Console mode. </span><span
+style='font-size:10.0pt;font-family:"Courier New"'>Type 'help' for more
+information.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; !timer</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Timer enabled.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; !attach
+c:\northwind.mdf</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>264 milliseconds.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; use
+&quot;c:\northwind.mdf&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; go</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>1 milliseconds.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; select customerid from
+customers where customerid like 'a%'</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; go</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>customerid</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>-------------</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>ALFKI</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>ANATR</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>ANTON</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>AROUT</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>4 row(s) affected.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>65 milliseconds.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><b><span style='font-size:10.0pt;
+font-family:Arial'>Console window (-consolewnd command)</span></b></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>The console window offers a simple UI to edit and send
+commands to SQL as a batch. It also supports loading and saving script files.
+Using the console window makes it easier to iterate over a query and refine it
+than using the command line.</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt;
+font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><span
+style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><span
+style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><span
+style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><b><span
+style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><b><span
+style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><b><span
+style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><b><span
+style='font-family:Arial'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><b><span
+style='font-family:Arial'>&nbsp;</span></b></p>
+
+<b><span style='font-size:12.0pt;font-family:Arial'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal align=center style='margin-left:.25in;text-align:center'><b><span
+style='font-family:Arial'>Using command files</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'>      </span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>SSEUtil supports the use of command files or files that
+contain SQL or Extended commands as available through the console mode. You can
+create new command files, load existing ones and execute them. </span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>1. Creating a command file</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Command files are simply text files where each line
+contains a command to run on the server. You can create new command files using
+SSEUtil or using any other editor like Notepad for example.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>In SSEUtil, you can create a command file by going to
+the console (-c option) and typing ‘!history save <i>filePath</i>’. All
+commands currently in the command history will be saved to the command file.
+Below is an example:</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -c</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Console mode. Type 'help'
+for more information.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; !attach
+c:\northwind.mdf</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; use
+&quot;c:\northwind.mdf&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; go</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; !timer</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Timer enabled.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; SELECT CustomerID FROM
+Customers WHERE CustomerID LIKE 'a%'</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; go</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>[...]</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; !history save
+c:\mycommands.txt</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command file saved
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;line-height:
+150%'><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-indent:-.25in;line-height:
+150%'><span style='font-size:10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>      After this, all commands typed
+in the console will be saved in the mycommand.txt file including the extended
+commands like !attach and !timer. </span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>&nbsp;</span></p>
+
+<span style='font-size:10.0pt;line-height:150%;font-family:Arial'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>2. Running a command file</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:Arial'>      </span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>You can run command files from the console (!run
+command) or by launching SSEUtil.exe with the –run command. All commands in the
+command file are executed one after the other. When running a command file from
+the console, you can omit the file path if a file was previously loaded. In
+that case it will just run the existing commands.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;text-indent:-.25in;line-height:150%'><span style='font-size:
+10.0pt;line-height:150%;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Here’s an example how to run the command file against
+the main instance from the command line:</span></p>
+
+<p class=MsoNormal style='margin-left:.75in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>C:\&gt;sseutil -run
+c:\mycommand.txt -m</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command file loaded
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; !attach
+c:\northwind.mdf</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; use
+&quot;c:\northwind.mdf&quot;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; go</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command completed
+successfully.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; !timer</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Timer enabled.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; SELECT CustomerID FROM
+Customers WHERE CustomerID LIKE 'a%'</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&gt; go</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>customerid</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>-------------</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>ALFKI</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>[...]</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>4 row(s) affected.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>74 milliseconds.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>Command list playback
+completed.</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;background:#E5E5E5'><span
+style='font-size:10.0pt;font-family:"Courier New"'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Variable expansion</span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-left:45.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>Command files can also contain variables. The variables
+will be replaced with the provided value(s) before the query is sent to the
+database server. Variables must be declared as follows in the file: _$$(VARNAME
+). For example, if a file contains 'SELECT * FROM _$$(TABLENAME)', you can give
+it a value on the command like like this: 'sseutil –run script.txt
+tablename=Customers'. The SQL query sent will then be: 'SELECT * FROM
+Customers'.</span></p>
+
+<p class=MsoNormal style='margin-left:45.0pt;text-align:justify;text-justify:
+inter-ideograph;line-height:150%'><span style='font-size:10.0pt;line-height:
+150%;font-family:Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph;
+line-height:150%'><span style='font-size:10.0pt;line-height:150%;font-family:
+Arial'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
+style='font-size:10.0pt;line-height:150%;font-family:Arial'>--- END OF DOCUMENT
+---</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<channel>
+  <id>e5fabcb7-cd56-4456-b981-74a5b4c71177</id>
+  <name>TestPeer_In</name>
+  <description></description>
+  <enabled>false</enabled>
+  <version>2.2.1.5861</version>
+  <lastModified>
+    <time>1350590000357</time>
+    <timezone>America/New_York</timezone>
+  </lastModified>
+  <revision>6</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">LLP Listener</property>
+      <property name="ackCodeError">AE</property>
+      <property name="ackCodeRejected">AR</property>
+      <property name="ackCodeSuccessful">AA</property>
+      <property name="ackIP"></property>
+      <property name="ackMsgError">An Error Occured Processing Message.</property>
+      <property name="ackMsgRejected">Message Rejected.</property>
+      <property name="ackMsgSuccessful"></property>
+      <property name="ackOnNewConnection">0</property>
+      <property name="ackPort"></property>
+      <property name="bufferSize">65536</property>
+      <property name="charEncoding">hex</property>
+      <property name="charsetEncoding">DEFAULT_ENCODING</property>
+      <property name="checkMSH15">0</property>
+      <property name="host">127.0.0.1</property>
+      <property name="messageEnd">0x1C</property>
+      <property name="messageStart">0x0B</property>
+      <property name="port">6661</property>
+      <property name="processBatchFiles">0</property>
+      <property name="receiveTimeout">0</property>
+      <property name="reconnectInterval">5000</property>
+      <property name="recordSeparator">0x0D</property>
+      <property name="responseFromTransformer">0</property>
+      <property name="responseValue">None</property>
+      <property name="segmentEnd">0x0D</property>
+      <property name="sendACK">1</property>
+      <property name="serverMode">1</property>
+      <property name="tcpProtocolClassName">org.mule.providers.tcp.protocols.TcpProtocol</property>
+      <property name="useStrictLLP">1</property>
+      <property name="waitForEndOfMessageCharacter">0</property>
+    </properties>
+    <transformer>
+      <steps/>
+      <inboundProtocol>HL7V2</inboundProtocol>
+      <outboundProtocol>HL7V2</outboundProtocol>
+      <inboundProperties>
+        <property name="convertLFtoCR">true</property>
+        <property name="handleRepetitions">false</property>
+        <property name="handleSubcomponents">false</property>
+        <property name="stripNamespaces">true</property>
+        <property name="useStrictParser">false</property>
+        <property name="useStrictValidation">false</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="convertLFtoCR">true</property>
+        <property name="handleRepetitions">false</property>
+        <property name="handleSubcomponents">false</property>
+        <property name="stripNamespaces">true</property>
+        <property name="useStrictParser">false</property>
+        <property name="useStrictValidation">false</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>LLP Listener</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <version>2.2.1.5861</version>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="DataType">Database Writer</property>
+        <property name="URL">jdbc:postgresql://localhost/RIS</property>
+        <property name="driver">org.postgresql.Driver</property>
+        <property name="host">query</property>
+        <property name="password">postgres</property>
+        <property name="query"></property>
+        <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(&apos;org.postgresql.Driver&apos;,&apos;jdbc:postgresql://localhost/RIS&apos;,&apos;postgres&apos;,&apos;postgres&apos;);
+
+
+var updateString = &quot;INSERT INTO hl7message_ (version_, direction_, status_, creationtime_, peer_, type_, event_, hl7version_, format_, text_) VALUES (&quot;;
+updateString += messageVersion + &quot;,&quot;;
+updateString += &quot;I, &quot;
+updateString += &quot;P, &quot;;
+updateString +=  DateUtil.getCurrentDate(&apos;yyyyMMddHHmmss&apos;) + &quot;,&quot;;
+updateString += &quot;TestPeer, &quot;;
+updateString += messageObject.getType() + &quot;,&quot;;
+updateString += messageObject.getType() + &quot;,&quot;;
+updateString +=  messageObject.getVersion() + &quot;,&quot;;
+updateString +=  &quot;ER7, &quot;;
+updateString += messageObject.getEncodedData();
+
+var result = dbConn.executeUpdate(updateString);
+
+dbConn.close();</property>
+        <property name="useScript">1</property>
+        <property name="username">postgres</property>
+      </properties>
+      <transformer>
+        <steps/>
+        <inboundProtocol>HL7V2</inboundProtocol>
+        <outboundProtocol>HL7V2</outboundProtocol>
+        <inboundProperties>
+          <property name="convertLFtoCR">true</property>
+          <property name="handleRepetitions">false</property>
+          <property name="handleSubcomponents">false</property>
+          <property name="stripNamespaces">true</property>
+          <property name="useStrictParser">false</property>
+          <property name="useStrictValidation">false</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="convertLFtoCR">true</property>
+          <property name="handleRepetitions">false</property>
+          <property name="handleSubcomponents">false</property>
+          <property name="stripNamespaces">true</property>
+          <property name="useStrictParser">false</property>
+          <property name="useStrictValidation">false</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>Database Writer</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+  </destinationConnectors>
+  <properties>
+    <property name="clearGlobalChannelMap">true</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="encryptData">false</property>
+    <property name="error_messages_only">false</property>
+    <property name="initialState">started</property>
+    <property name="max_message_age">-1</property>
+    <property name="store_messages">true</property>
+    <property name="synchronous">true</property>
+    <property name="transactional">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</shutdownScript>
+</channel>

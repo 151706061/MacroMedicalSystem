@@ -1,0 +1,14 @@
+<Items >
+  <EnumerationData type="hash">
+    <EnumerationClass>ClearCanvas.Healthcare.InformationAuthorityEnum</EnumerationClass>
+    <Members type="array">
+      <item type="hash">
+        <Code>InformationAuthority</Code>
+        <Value>InformationAuthority</Value>
+        <Description>InformationAuthority</Description>
+        <DisplayOrder>1</DisplayOrder>
+        <Deactivated>false</Deactivated>
+      </item>
+    </Members>
+  </EnumerationData>
+</Items>

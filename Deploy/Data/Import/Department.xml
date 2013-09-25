@@ -1,0 +1,78 @@
+<Items>
+ <DepartmentData hash="true">
+    <Id>FACILITY1_CT</Id>
+    <Name>CT</Name>
+    <FacilityCode>FACILITY1</FacilityCode>
+    <ExamLocations type="array">
+      <item type="hash">
+        <Name>LOCATION1</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+      <item type="hash">
+        <Name>LOCATION2</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+      <item type="hash">
+        <Name>LOCATION3</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+    </ExamLocations>
+  </DepartmentData>
+  <DepartmentData hash="true">
+    <Id>FACILITY1_MRI</Id>
+    <Name>MRI</Name>
+    <FacilityCode>FACILITY1</FacilityCode>
+    <ExamLocations type="array">
+      <item type="hash">
+        <Name>LOCATION1</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+      <item type="hash">
+        <Name>LOCATION2</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+      <item type="hash">
+        <Name>LOCATION3</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+    </ExamLocations>
+  </DepartmentData>
+ <DepartmentData hash="true">
+    <Id>FACILITY2_CT</Id>
+    <Name>CT</Name>
+    <FacilityCode>FACILITY2</FacilityCode>
+    <ExamLocations type="array">
+      <item type="hash">
+        <Name>LOCATION1</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+      <item type="hash">
+        <Name>LOCATION2</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+      <item type="hash">
+        <Name>LOCATION3</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+    </ExamLocations>
+  </DepartmentData>
+  <DepartmentData hash="true">
+    <Id>FACILITY2_MRI</Id>
+    <Name>MRI</Name>
+    <FacilityCode>FACILITY2</FacilityCode>
+    <ExamLocations type="array">
+      <item type="hash">
+        <Name>LOCATION1</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+      <item type="hash">
+        <Name>LOCATION2</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+      <item type="hash">
+        <Name>LOCATION3</Name>
+        <Deactivated>false</Deactivated>
+      </item>
+    </ExamLocations>
+  </DepartmentData>
+</Items>

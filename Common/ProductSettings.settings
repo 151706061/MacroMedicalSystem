@@ -1,0 +1,36 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Macro.Common" GeneratedClassName="ProductSettings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Component" Description="The product name." Type="System.String" Scope="Application">
+      <Value Profile="(Default)">+nH5OL3K6/yiF17UTuQ8AAuwsSK679km</Value>
+    </Setting>
+    <Setting Name="Version" Description="The version of the product, which can be different from that of the assemblies." Type="System.String" Scope="Application">
+      <Value Profile="(Default)">q+MreiMibM0=</Value>
+    </Setting>
+    <Setting Name="VersionSuffix" Description="Product version suffix (e.g. SP1)." Type="System.String" Scope="Application">
+      <Value Profile="(Default)">mTaoDcie2GM=</Value>
+    </Setting>
+    <Setting Name="Product" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">+nH5OL3K6/xP46EmaJ4HWw==</Value>
+    </Setting>
+    <Setting Name="Edition" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">q+MreiMibM0=</Value>
+    </Setting>
+    <Setting Name="Copyright" Description="Product copyright." Type="System.String" Scope="Application">
+      <Value Profile="(Default)">YlkMZi0vq3wzKgqRan2Yh9UqMz2eLKIZb529uCcaiEHSzc9YoSzF6OmlGzFwV7SF</Value>
+    </Setting>
+    <Setting Name="License" Description="Product license." Type="System.String" Scope="Application">
+      <Value Profile="(Default)">YlkMZi0vq3x5r/OIwrX+b3TuIK+g9GrzrZbrskVMiAcd2h/TT+Z2rQlEZFfniu3lkkQ0dY9BdOI=</Value>
+    </Setting>
+    <Setting Name="Release" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">n/kJvd7Xbb8=</Value>
+    </Setting>
+    <Setting Name="Name" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="FamilyName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>

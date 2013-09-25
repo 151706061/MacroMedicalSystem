@@ -1,0 +1,14 @@
+<Items>
+  <FacilityData hash="true">
+    <Code>Facility1</Code>
+    <Name>Facility1</Name>
+    <Description>Facility1</Description>
+    <InformationAuthority>InformationAuthority</InformationAuthority>
+  </FacilityData>
+  <FacilityData hash="true">
+    <Code>Facility2</Code>
+    <Name>Facility2</Name>
+    <Description>Facility2</Description>
+    <InformationAuthority>InformationAuthority</InformationAuthority>
+  </FacilityData>  
+</Items>

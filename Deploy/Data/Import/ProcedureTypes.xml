@@ -1,0 +1,47 @@
+
+C:\Users\aaron\src\Xian>@git.exe %*
+<Items>
+  <ProcedureTypeData hash="true">
+    <Id>0</Id>
+    <Name>Base</Name>
+    <PlanXml hash='true'>
+      <procedure-plan>
+        <procedure-steps>
+          <procedure-step class="ClearCanvas.Healthcare.RegistrationProcedureStep" />
+        </procedure-steps>
+      </procedure-plan>
+    </PlanXml>
+    <Deactivated>false</Deactivated>
+  </ProcedureTypeData>
+ <ProcedureTypeData hash="true">
+    <Id>1</Id>
+    <Name>CT-Base</Name>
+    <BaseTypeId>0</BaseTypeId>
+    <PlanXml type="hash">
+      <procedure-plan>
+        <procedure-steps>
+          <procedure-step class="ClearCanvas.Healthcare.ProtocolAssignmentStep" />
+        </procedure-steps>
+      </procedure-plan>
+    </PlanXml>
+    <Deactivated>false</Deactivated>
+  </ProcedureTypeData>
+ <ProcedureTypeData hash="true">
+    <Id>1001</Id>
+    <Name>CT</Name>
+    <BaseTypeId>0</BaseTypeId>
+    <PlanXml type="hash">
+      <procedure-plan>
+        <procedure-steps>
+          <procedure-step class="ClearCanvas.Healthcare.ModalityProcedureStep" modality="3" description="CT" />
+        </procedure-steps>
+      </procedure-plan>
+    </PlanXml>
+    <Deactivated>false</Deactivated>
+  </ProcedureTypeData>
+ </Items>
+C:\Users\aaron\src\Xian>@set ErrorLevel=%ErrorLevel%
+
+C:\Users\aaron\src\Xian>@rem Restore the original console codepage.
+
+C:\Users\aaron\src\Xian>@chcp %cp_oem% > nul < nul

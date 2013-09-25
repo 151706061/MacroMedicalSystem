@@ -1,0 +1,23 @@
+﻿<Items>
+ <LocationData type="hash">
+  <Id>LOCATION1</Id>
+  <Name>LOCATION1</Name>
+  <Description>LOCATION1</Description>
+  <FacilityCode>FACILITY1</FacilityCode>
+  <PointOfCare>LOCATION1</PointOfCare>
+ </LocationData>
+ <LocationData type="hash">
+  <Id>LOCATION2</Id>
+  <Name>LOCATION2</Name>
+  <Description>LOCATION2</Description>
+  <FacilityCode>FACILITY1</FacilityCode>
+  <PointOfCare>LOCATION2</PointOfCare>
+ </LocationData>
+ <LocationData type="hash">
+  <Id>LOCATION3</Id>
+  <Name>LOCATION3</Name>
+  <Description>LOCATION3</Description>
+  <FacilityCode>FACILITY1</FacilityCode>
+  <PointOfCare>LOCATION3</PointOfCare>
+ </LocationData>
+</Items>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="ClearCanvas.HL7" namespace="ClearCanvas.HL7">
+  <class name="HL7Message" proxy="HL7Message" table="HL7Message_">
+    <id name="OID" column="OID_" type="Guid">
+      <generator class="guid.comb"/>
+    </id>
+    <version name="Version" column="Version_"/>
+    <property name="Direction" column="Direction_" type="String" length="2" not-null="true"/>
+    <property name="Status" column="Status_" type="String" length="2" not-null="true"/>
+    <property name="CreationTime" column="CreationTime_" type="Timestamp" not-null="true"/>
+    <property name="ReprocessTime" column="ReprocessTime_" type="Timestamp" not-null="false"/>
+    <property name="SequenceNumber" column="SequenceNumber_" type="String" not-null="false"/>
+    <property name="ControlId" column="ControlId_" type="String" not-null="false"/>
+    <property name="Peer" column="Peer_" type="String" not-null="true"/>
+    <property name="Type" column="Type_" type="String" not-null="true"/>
+    <property name="Event" column="Event_" type="String" not-null="false"/>
+    <property name="HL7Version" column="HL7Version_" type ="String" not-null="true"/>
+    <property name="Format" column="Format_" type="String" not-null="true"/>
+    <property name="Text" column="Text_" type="StringClob" length="100000"  not-null="true"/>
+  </class>  
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<Items>
+  <DiagnosticServiceData type="hash">
+    <Id>1</Id>
+    <Name>Diagnostic Service 1</Name>
+    <ProcedureTypes type="array">
+      <item type="hash">
+        <Id>1</Id>
+      </item>
+    </ProcedureTypes>
+    <Deactivated>false</Deactivated>
+  </DiagnosticServiceData>
+  <DiagnosticServiceData type="hash">
+    <Id>2</Id>
+    <Name>Diagnostic Service 2</Name>
+    <ProcedureTypes type="array">
+      <item type="hash">
+        <Id>2</Id>
+      </item>
+    </ProcedureTypes>
+    <Deactivated>false</Deactivated>
+  </DiagnosticServiceData>
+</Items>

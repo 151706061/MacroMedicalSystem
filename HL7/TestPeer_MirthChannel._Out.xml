@@ -1,0 +1,166 @@
+<channel>
+  <id>ecc07851-9be3-4952-9f89-190ee8fb8ce9</id>
+  <name>TestPeer_Out</name>
+  <description></description>
+  <enabled>false</enabled>
+  <version>2.2.1.5861</version>
+  <lastModified>
+    <time>1350590194844</time>
+    <timezone>America/New_York</timezone>
+  </lastModified>
+  <revision>147</revision>
+  <sourceConnector>
+    <name>sourceConnector</name>
+    <properties>
+      <property name="DataType">Database Reader</property>
+      <property name="URL">jdbc:postgresql://localhost/RIS</property>
+      <property name="ack"></property>
+      <property name="ackScript">// This update script will be executed once for ever result returned from the above query.
+var dbConn = DatabaseConnectionFactory.createDatabaseConnection(&apos;org.postgresql.Driver&apos;,&apos;jdbc:postgresql://localhost/RIS&apos;,&apos;postgres&apos;,&apos;postgres&apos;);
+var queryString = &quot;UPDATE hl7message_ SET status_ = &apos;C&apos; WHERE oid_ = &apos;&quot; + $(&apos;oid_&apos;) + &quot;&apos;&quot;;
+dbConn.executeUpdate(queryString);
+dbConn.close();</property>
+      <property name="driver">org.postgresql.Driver</property>
+      <property name="host">query</property>
+      <property name="password">postgres</property>
+      <property name="pollingFrequency">100</property>
+      <property name="pollingType">interval</property>
+      <property name="processResultsInOrder">1</property>
+      <property name="query"></property>
+      <property name="script">var dbConn = DatabaseConnectionFactory.createDatabaseConnection(&apos;org.postgresql.Driver&apos;,&apos;jdbc:postgresql://localhost/RIS&apos;,&apos;postgres&apos;,&apos;postgres&apos;);
+var peerName = &quot;TestPeer&quot;;
+var queryString = &quot;SELECT text_, oid_ FROM hl7message_ where status_ = &apos;P&apos; and direction_ = &apos;O&apos; and peer_ = &apos;&quot; + peerName + &quot;&apos;&quot;;
+var result = dbConn.executeCachedQuery(queryString);
+dbConn.close();
+return result;
+
+</property>
+      <property name="useAck">1</property>
+      <property name="useScript">1</property>
+      <property name="username">postgres</property>
+    </properties>
+    <transformer>
+      <steps/>
+      <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8
+cmVzdWx0Pg0KICAgIDx0ZXh0Xz52YWx1ZTwvdGV4dF8+DQogICAgPG9pZF8+dmFsdWU8L29pZF8+
+DQo8L3Jlc3VsdD4NCg==</inboundTemplate>
+      <inboundProtocol>XML</inboundProtocol>
+      <outboundProtocol>XML</outboundProtocol>
+      <inboundProperties>
+        <property name="stripNamespaces">true</property>
+      </inboundProperties>
+      <outboundProperties>
+        <property name="stripNamespaces">true</property>
+      </outboundProperties>
+    </transformer>
+    <filter>
+      <rules/>
+    </filter>
+    <transportName>Database Reader</transportName>
+    <mode>SOURCE</mode>
+    <enabled>true</enabled>
+    <version>2.2.1.5861</version>
+  </sourceConnector>
+  <destinationConnectors>
+    <connector>
+      <name>Destination 1</name>
+      <properties>
+        <property name="DataType">LLP Sender</property>
+        <property name="ackTimeout">5000</property>
+        <property name="bufferSize">65536</property>
+        <property name="charEncoding">hex</property>
+        <property name="charsetEncoding">DEFAULT_ENCODING</property>
+        <property name="host">127.0.0.1</property>
+        <property name="keepSendSocketOpen">0</property>
+        <property name="maxRetryCount">2</property>
+        <property name="messageEnd">0x1C</property>
+        <property name="messageStart">0x0B</property>
+        <property name="port">6660</property>
+        <property name="processHl7AckResponse">1</property>
+        <property name="queueAckTimeout">1</property>
+        <property name="queuePollInterval">200</property>
+        <property name="reconnectMillisecs">10000</property>
+        <property name="recordSeparator">0x0D</property>
+        <property name="replyChannelId">sink</property>
+        <property name="rotateQueue">0</property>
+        <property name="segmentEnd">0x0D</property>
+        <property name="sendTimeout">5000</property>
+        <property name="tcpProtocolClassName">org.mule.providers.tcp.protocols.TcpProtocol</property>
+        <property name="template">${text_}</property>
+        <property name="usePersistentQueues">0</property>
+      </properties>
+      <transformer>
+        <steps>
+          <step>
+            <sequenceNumber>0</sequenceNumber>
+            <name>text_</name>
+            <script>var mapping;try { mapping = msg[&apos;text_&apos;].toString(); }catch (e) { logger.error(e);  mapping = &apos;&apos;;}channelMap.put(&apos;text_&apos;, validate( mapping , &apos;&apos;, new Array()));</script>
+            <type>Mapper</type>
+            <data class="map">
+              <entry>
+                <string>Variable</string>
+                <string>text_</string>
+              </entry>
+              <entry>
+                <string>DefaultValue</string>
+                <string></string>
+              </entry>
+              <entry>
+                <string>Mapping</string>
+                <string>msg[&apos;text_&apos;].toString()</string>
+              </entry>
+              <entry>
+                <string>RegularExpressions</string>
+                <list/>
+              </entry>
+              <entry>
+                <string>isGlobal</string>
+                <string>channel</string>
+              </entry>
+            </data>
+          </step>
+        </steps>
+        <inboundTemplate encoding="base64">PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxy
+ZXN1bHQ+CiAgICA8dGV4dF8+TVNILi4uLjwvdGV4dF8+CiAgICA8b2lkXz5ibGFoYmxhaDwvb2lk
+Xz4KPC9yZXN1bHQ+</inboundTemplate>
+        <outboundTemplate encoding="base64"></outboundTemplate>
+        <inboundProtocol>XML</inboundProtocol>
+        <outboundProtocol>XML</outboundProtocol>
+        <inboundProperties>
+          <property name="stripNamespaces">true</property>
+        </inboundProperties>
+        <outboundProperties>
+          <property name="stripNamespaces">true</property>
+        </outboundProperties>
+      </transformer>
+      <filter>
+        <rules/>
+      </filter>
+      <transportName>LLP Sender</transportName>
+      <mode>DESTINATION</mode>
+      <enabled>true</enabled>
+      <version>2.2.1.5861</version>
+    </connector>
+  </destinationConnectors>
+  <properties>
+    <property name="clearGlobalChannelMap">true</property>
+    <property name="dont_store_filtered">false</property>
+    <property name="encryptData">false</property>
+    <property name="error_messages_only">false</property>
+    <property name="initialState">started</property>
+    <property name="max_message_age">-1</property>
+    <property name="store_messages">true</property>
+    <property name="synchronous">true</property>
+    <property name="transactional">false</property>
+  </properties>
+  <preprocessingScript>// Modify the message variable below to pre process data
+return message;</preprocessingScript>
+  <postprocessingScript>// This script executes once after a message has been processed
+return;</postprocessingScript>
+  <deployScript>// This script executes once when the channel is deployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</deployScript>
+  <shutdownScript>// This script executes once when the channel is undeployed
+// You only have access to the globalMap and globalChannelMap here to persist data
+return;</shutdownScript>
+</channel>

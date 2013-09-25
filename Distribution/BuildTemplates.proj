@@ -1,0 +1,92 @@
+<Project DefaultTargets="Build Wizard and Make Zips;Install For Visual Studio User" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- To use the zip functionality of this project, you must download and install the MSBuild Community Tasks msi from http://msbuildtasks.com/ -->
+  <Import  Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  
+  <PropertyGroup>
+
+    <ItemTemplatesPath>.\VSTemplates\ItemTemplates\</ItemTemplatesPath>
+    <ProjectTemplatesPath>.\VSTemplates\ProjectTemplates\</ProjectTemplatesPath>
+    <ZipsFolder>.\VSTemplates\TemplateZips\</ZipsFolder>
+    <ItemTemplatesZipPath>$(ZipsFolder)ItemTemplates\</ItemTemplatesZipPath>
+    <ProjectTemplateZipPath>$(ZipsFolder)ProjectTemplates\</ProjectTemplateZipPath>
+    <MyDocumentsVSFolder>My Documents\Visual Studio 2008\</MyDocumentsVSFolder>
+    <BuilderProgram>msbuild.exe</BuilderProgram>
+    <KeyFile Condition=" '$(KeyFile)' == '' ">keyfile.snk</KeyFile>
+    <VSWizardBuildOptions>/property:Configuration=Release;SignAssembly=true;DelaySign=false;AssemblyOriginatorKeyFile=$(KeyFile)</VSWizardBuildOptions>
+    <InstallForVSUser>true</InstallForVSUser>
+  </PropertyGroup>
+
+  <Target  Name="Install For Visual Studio User" Condition="$(InstallForVSUser) == 'true'">
+
+    <!-- Copy all the item templates to the user profile directory -->
+    <CreateItem Include="$(ItemTemplatesZipPath)*.zip">
+      <Output ItemName="ItemTemplateZipFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="@(ItemTemplateZipFiles)" DestinationFolder="$(USERPROFILE)\$(MyDocumentsVSFolder)Templates\ItemTemplates" />
+
+    <!-- Copy all the project templates to the user profile directory -->
+    <CreateItem Include="$(ProjectTemplateZipPath)*_Dev*.zip">
+      <Output ItemName="ProjectTemplateZipFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Copy SourceFiles="@(ProjectTemplateZipFiles)" DestinationFolder="$(USERPROFILE)\$(MyDocumentsVSFolder)Templates\ProjectTemplates" />
+
+    <!-- Register VSWizards.dll in the GAC -->
+    <Exec Command="gacutil -i $(ZipsFolder)ClearCanvas.VSWizards.dll" />
+
+  </Target>
+
+  <Target Name="Build Wizard and Make Zips">
+    <!--Preparation-->
+
+    <MakeDir Directories="$(ItemTemplatesZipPath)" Condition="!Exists('$(ItemTemplatesZipPath)')" />
+    <MakeDir Directories="$(ProjectTemplateZipPath)" Condition="!Exists('$(ProjectTemplateZipPath)')" />
+
+    <!--Build and Copy Wizard-->
+    <Exec Command="$(BuilderProgram) $(VSWizardBuildOptions) .\VSWizards\ClearCanvas.VSWizards.sln" />
+    <Copy SourceFiles=".\VSWizards\bin\Release\ClearCanvas.VSWizards.dll" DestinationFolder="$(ZipsFolder)" />
+
+    <!--Creates the Application Component Item Template Zip-->
+    <CreateItem Include="$(ItemTemplatesPath)ApplicationComponent\**\*.*" Exclude="$(ItemTemplatesPath)ApplicationComponent\**\*svn\**">
+      <Output ItemName="ApplicationComponentFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Zip Files="@(ApplicationComponentFiles)" ZipFileName="$(ItemTemplatesZipPath)ClearCanvas_ApplicationComponent.zip" WorkingDirectory="$(ItemTemplatesPath)ApplicationComponent"/>
+
+    <!--Creates the Settings Item Template Zip-->
+    <CreateItem Include="$(ItemTemplatesPath)Settings\**\*.*" Exclude="$(ItemTemplatesPath)Settings\**\*svn\**">
+      <Output ItemName="SettingsFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Zip Files="@(SettingsFiles)" ZipFileName="$(ItemTemplatesZipPath)ClearCanvas_Settings.zip" WorkingDirectory="$(ItemTemplatesPath)Settings"/>
+
+    <!--Creates the Tool Item Template Zip-->
+    <CreateItem Include="$(ItemTemplatesPath)Tool\**\*.*" Exclude="$(ItemTemplatesPath)Tool\**\*svn\**">
+      <Output ItemName="ToolFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Zip Files="@(ToolFiles)" ZipFileName="$(ItemTemplatesZipPath)ClearCanvas_Tool.zip" WorkingDirectory="$(ItemTemplatesPath)Tool"/>
+
+    <!--Creates the Plugin Project Template Zip (for binary) -->
+    <CreateItem Include="$(ProjectTemplatesPath)Plugin\**\*.*" Exclude="$(ProjectTemplatesPath)Plugin\**\*svn\**">
+      <Output ItemName="PluginFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Zip Files="@(PluginFiles)" ZipFileName="$(ProjectTemplateZipPath)ClearCanvas_Plugin.zip" WorkingDirectory="$(ProjectTemplatesPath)Plugin"/>
+
+    <!--Creates the PluginWFV Project Template Zip (for binary) -->
+    <CreateItem Include="$(ProjectTemplatesPath)PluginWFV\**\*.*" Exclude="$(ProjectTemplatesPath)PluginWFV\**\*svn\**">
+      <Output ItemName="PluginWFVFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Zip Files="@(PluginWFVFiles)" ZipFileName="$(ProjectTemplateZipPath)ClearCanvas_PluginWFV.zip" WorkingDirectory="$(ProjectTemplatesPath)PluginWFV"/>
+   
+    <!--Creates the Plugin Project Template Zip (for source) -->
+    <CreateItem Include="$(ProjectTemplatesPath)DevPlugin\**\*.*" Exclude="$(ProjectTemplatesPath)DevPlugin\**\*svn\**">
+      <Output ItemName="DevPluginFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Zip Files="@(DevPluginFiles)" ZipFileName="$(ProjectTemplateZipPath)ClearCanvas_DevPlugin.zip" WorkingDirectory="$(ProjectTemplatesPath)DevPlugin"/>
+
+    <!--Creates the PluginWFV Project Template Zip (for source) -->
+    <CreateItem Include="$(ProjectTemplatesPath)DevPluginWFV\**\*.*" Exclude="$(ProjectTemplatesPath)DevPluginWFV\**\*svn\**">
+      <Output ItemName="DevPluginWFVFiles" TaskParameter="Include" />
+    </CreateItem>
+    <Zip Files="@(DevPluginWFVFiles)" ZipFileName="$(ProjectTemplateZipPath)ClearCanvas_DevPluginWFV.zip" WorkingDirectory="$(ProjectTemplatesPath)DevPluginWFV"/>
+
+  </Target>
+</Project>

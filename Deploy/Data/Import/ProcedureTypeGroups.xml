@@ -1,0 +1,32 @@
+<Items>
+  <ProcedureTypeGroupData type="hash">
+    <Name>Relevance Group</Name>
+    <Class>ClearCanvas.Healthcare.RelevanceGroup</Class>
+    <Description></Description>
+    <ProcedureTypes type="array">
+      <item type="hash">
+        <Id>1234567</Id>
+      </item> 
+    </ProcedureTypes>
+  </ProcedureTypeGroupData>
+  <ProcedureTypeGroupData type="hash">
+    <Name>Reading Group</Name>
+    <Class>ClearCanvas.Healthcare.ReadingGroup</Class>
+     <Description></Description>
+       <ProcedureTypes type="array">
+            <item type="hash">
+              <Id>7654321</Id>
+            </item>
+          </ProcedureTypes>
+        </ProcedureTypeGroupData>
+  <ProcedureTypeGroupData type="hash">
+     <Name>Performing Group</Name>
+     <Class>ClearCanvas.Healthcare.PerformingGroup</Class>
+     <Description></Description>
+          <ProcedureTypes type="array">
+      <item type="hash">
+        <Id>123</Id>
+      </item>
+    </ProcedureTypes>
+  </ProcedureTypeGroupData>
+</Items>

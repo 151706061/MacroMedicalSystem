@@ -1,0 +1,9 @@
+﻿namespace Macro.Common.Media.IMAPI2
+{
+    public enum IMAPI_CD_TRACK_DIGITAL_COPY_SETTING
+    {
+        IMAPI_CD_TRACK_DIGITAL_COPY_PERMITTED = 0x00,
+        IMAPI_CD_TRACK_DIGITAL_COPY_PROHIBITED = 0x01,
+        IMAPI_CD_TRACK_DIGITAL_COPY_SCMS = 0x02
+    }
+}

@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD5A9678-F8CC-4E72-8B64-060E2DD8BF85}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Macro.Common.Media</RootNamespace>
+    <AssemblyName>Macro.Common.Media</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BurnException.cs" />
+    <Compile Include="BurnMediaData.cs" />
+    <Compile Include="BurnMediaTask.cs" />
+    <Compile Include="BurnStatus.cs" />
+    <Compile Include="IBurnMediaData.cs" />
+    <Compile Include="IMAPI2\BootOptions.cs" />
+    <Compile Include="IMAPI2\BurnVerification.cs" />
+    <Compile Include="IMAPI2\FileSystemImage.cs" />
+    <Compile Include="IMAPI2\DiscFormat2Data.cs" />
+    <Compile Include="IMAPI2\DiscFormat2Erase.cs" />
+    <Compile Include="IMAPI2\DiscFormat2RawCD.cs" />
+    <Compile Include="IMAPI2\DiscFormat2TrackAtOnce.cs" />
+    <Compile Include="IMAPI2\DiscMaster2.cs" />
+    <Compile Include="IMAPI2\DiscRecorder2.cs" />
+    <Compile Include="IMAPI2\EmulationType.cs" />
+    <Compile Include="IMAPI2\EnumFsiItems.cs" />
+    <Compile Include="IMAPI2\EnumProgressItems.cs" />
+    <Compile Include="IMAPI2\FileSystemImageResult.cs" />
+    <Compile Include="IMAPI2\FileTime.cs" />
+    <Compile Include="IMAPI2\FsiDirectoryItem.cs" />
+    <Compile Include="IMAPI2\FsiFileItem.cs" />
+    <Compile Include="IMAPI2\FsiFileSystems.cs" />
+    <Compile Include="IMAPI2\FsiItemType.cs" />
+    <Compile Include="IMAPI2\FsiNamedStreams.cs" />
+    <Compile Include="IMAPI2\FsiStream.cs" />
+    <Compile Include="IMAPI2\ImapiBurnVerificationLevel.cs" />
+    <Compile Include="IMAPI2\ImapiCDSectorType.cs" />
+    <Compile Include="IMAPI2\ImapiCDTrackDigitalCopySetting.cs" />
+    <Compile Include="IMAPI2\ImapiFeaturePageType.cs" />
+    <Compile Include="IMAPI2\ImapiFormat2DataMediaState.cs" />
+    <Compile Include="IMAPI2\ImapiFormat2DataWriteAction.cs" />
+    <Compile Include="IMAPI2\ImapiFormat2RawCDDataSectorType.cs" />
+    <Compile Include="IMAPI2\ImapiFormat2RawCDWriteAction.cs" />
+    <Compile Include="IMAPI2\ImapiFormat2TaoWriteAction.cs" />
+    <Compile Include="IMAPI2\ImapiMediaPhysicalType.cs" />
+    <Compile Include="IMAPI2\ImapiMediaWriteProtectState.cs" />
+    <Compile Include="IMAPI2\ImapiModePageRequestType.cs" />
+    <Compile Include="IMAPI2\ImapiModePageType.cs" />
+    <Compile Include="IMAPI2\ImapiProfileType.cs" />
+    <Compile Include="IMAPI2\ImapiReadTrackAddressType.cs" />
+    <Compile Include="IMAPI2\IsoImageManager.cs" />
+    <Compile Include="IMAPI2\LargeInteger.cs" />
+    <Compile Include="IMAPI2\MultisessionSequential.cs" />
+    <Compile Include="IMAPI2\PlatformId.cs" />
+    <Compile Include="IMAPI2\ProgressItem.cs" />
+    <Compile Include="IMAPI2\RawCDImageCreator.cs" />
+    <Compile Include="IMAPI2\TagConnectData.cs" />
+    <Compile Include="IMAPI2\TagStatstg.cs" />
+    <Compile Include="IMAPI2\WriteEngine2.cs" />
+    <Compile Include="IMAPI2\WriteSpeedDescriptor.cs" />
+    <Compile Include="ImapiReturnValues.cs" />
+    <Compile Include="MediaType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Win32.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SR.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Macro.Common.csproj">
+      <Project>{F6EAD428-E6CF-4DF6-B2F3-D33D532C5343}</Project>
+      <Name>Macro.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RisDemo", "RisDemo.vdproj", "{49208AA4-EEFF-4AF1-9FB5-D6FBF2A9CCAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49208AA4-EEFF-4AF1-9FB5-D6FBF2A9CCAC}.Debug|Default.ActiveCfg = Debug
+		{49208AA4-EEFF-4AF1-9FB5-D6FBF2A9CCAC}.Debug|Default.Build.0 = Debug
+		{49208AA4-EEFF-4AF1-9FB5-D6FBF2A9CCAC}.Release|Default.ActiveCfg = Release
+		{49208AA4-EEFF-4AF1-9FB5-D6FBF2A9CCAC}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
