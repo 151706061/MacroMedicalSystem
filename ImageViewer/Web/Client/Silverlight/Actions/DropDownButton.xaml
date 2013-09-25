@@ -1,0 +1,46 @@
+﻿<!--
+Copyright (c) 2011, Macro Inc.
+All rights reserved.
+http://www.Macro.ca
+
+This software is licensed under the Open Software License v3.0.
+For the complete license, see http://www.Macro.ca/OSLv3.0
+-->
+    
+<UserControl x:Class="Macro.ImageViewer.Web.Client.Silverlight.Actions.DropDownButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:my="clr-namespace:Macro.Web.Client.Silverlight;assembly=Macro.Web.Client.Silverlight">
+
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Toolbar.xaml" x:Name="Styles"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <my:MenuManager.AttachedContextMenu>
+        <my:ContextMenu x:Name="DummyMenu"/>
+    </my:MenuManager.AttachedContextMenu>
+
+    <Border Padding="2">
+    <StackPanel x:Name="StackPanelVerticalComponent" Background="Transparent">
+            <StackPanel Orientation="Horizontal" Background="Transparent">
+                <Grid x:Name="DropDownToolbarButton" >
+                <Button x:Name="ButtonComponent" Background="Transparent" Style="{StaticResource ToolbarButtonStyle}" Padding="0"/>
+                <Ellipse x:Name="CheckedIndicator" Stroke="Yellow" StrokeThickness="3" Fill="Transparent" Opacity="1" IsHitTestVisible="false" Canvas.ZIndex="-1"/>
+                <Rectangle x:Name="OverlayCheckedIndicator" Stroke="Yellow" StrokeThickness="3" Fill="Transparent" Opacity="1" IsHitTestVisible="false" 
+                           Canvas.ZIndex="-2" HorizontalAlignment="Right" VerticalAlignment="Bottom" RadiusX="2" RadiusY="2"/>                    
+                </Grid>
+                <Button x:Name="DropButtonComponent" Style="{StaticResource ToolbarButtonStyle}">
+                    <ContentControl>
+                        <Image Source="{StaticResource DropDownButtonIcon}" Stretch="None"/>
+                    </ContentControl>                    
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" x:Name="StackPlaceHolder" Background="Transparent"/>
+        </StackPanel>
+    </Border>
+</UserControl>

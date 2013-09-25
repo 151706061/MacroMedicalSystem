@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.clearcanvas.ca/web/application" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.clearcanvas.ca/web/application" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.clearcanvas.ca/web/application/Imports">
+      <xsd:import schemaLocation="http://thanh/ImageServer/Services/ApplicationService.svc?xsd=xsd1" namespace="http://www.clearcanvas.ca/web/application" />
+      <xsd:import schemaLocation="http://thanh/ImageServer/Services/ApplicationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" />
+      <xsd:import schemaLocation="http://thanh/ImageServer/Services/ApplicationService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://thanh/ImageServer/Services/ApplicationService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://thanh/ImageServer/Services/ApplicationService.svc?xsd=xsd3" namespace="http://www.clearcanvas.ca/web/application/viewer" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApplicationService_StartApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartApplication" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_StartApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_StartApplication_OutOfResourceFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:OutOfResourceFault" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_StartApplication_SessionValidationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" name="detail" element="q1:SessionValidationFault" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_StopApplication_InputMessage">
+    <wsdl:part name="parameters" element="tns:StopApplication" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_StopApplication_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StopApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_StopApplication_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" name="detail" element="q2:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_ProcessMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessMessages" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_ProcessMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_ProcessMessages_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" name="detail" element="q3:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetPendingEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingEvent" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetPendingEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPendingEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_GetPendingEvent_InvalidOperationFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" name="detail" element="q4:InvalidOperationFault" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_ReportPerformance_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportPerformance" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_SetProperty_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetProperty" />
+  </wsdl:message>
+  <wsdl:message name="IApplicationService_SetProperty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetPropertyResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IApplicationService">
+    <wsdl:operation name="StartApplication">
+      <wsdl:input wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/StartApplication" message="tns:IApplicationService_StartApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/StartApplicationResponse" message="tns:IApplicationService_StartApplication_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/StartApplicationOutOfResourceFaultFault" name="OutOfResourceFaultFault" message="tns:IApplicationService_StartApplication_OutOfResourceFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/StartApplicationSessionValidationFaultFault" name="SessionValidationFaultFault" message="tns:IApplicationService_StartApplication_SessionValidationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StopApplication">
+      <wsdl:input wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/StopApplication" message="tns:IApplicationService_StopApplication_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/StopApplicationResponse" message="tns:IApplicationService_StopApplication_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/StopApplicationInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IApplicationService_StopApplication_InvalidOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessMessages">
+      <wsdl:input wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/ProcessMessages" message="tns:IApplicationService_ProcessMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/ProcessMessagesResponse" message="tns:IApplicationService_ProcessMessages_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/ProcessMessagesInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IApplicationService_ProcessMessages_InvalidOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPendingEvent">
+      <wsdl:input wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/GetPendingEvent" message="tns:IApplicationService_GetPendingEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/GetPendingEventResponse" message="tns:IApplicationService_GetPendingEvent_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/GetPendingEventInvalidOperationFaultFault" name="InvalidOperationFaultFault" message="tns:IApplicationService_GetPendingEvent_InvalidOperationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportPerformance">
+      <wsdl:input wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/ReportPerformance" message="tns:IApplicationService_ReportPerformance_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProperty">
+      <wsdl:input wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/SetProperty" message="tns:IApplicationService_SetProperty_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.clearcanvas.ca/web/application/IApplicationService/SetPropertyResponse" message="tns:IApplicationService_SetProperty_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

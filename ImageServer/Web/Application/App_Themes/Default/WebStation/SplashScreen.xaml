@@ -1,0 +1,23 @@
+﻿<StackPanel xmlns="http://schemas.microsoft.com/client/2007"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:Drawing="clr-namespace:System.Drawing;assembly=System.Drawing"
+               VerticalAlignment="Center" Margin="0,200,0,0">
+  <Image Source="../../../App_Themes/Default/WebStation/WebStationLogo.png" Stretch="None"
+     HorizontalAlignment="Center"  VerticalAlignment="Center" />
+  <Grid HorizontalAlignment="Center" Margin="0,20,0,0">
+    <Rectangle x:Name="rectBorder" StrokeThickness="2" Stroke="#FF205F87"
+               Height="5" Width="600" HorizontalAlignment="Left"/>
+    <Rectangle x:Name="rectBar"
+               Height="5" Width="0" HorizontalAlignment="Left">
+      <Rectangle.Fill>
+        <LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0" >
+          <GradientStop Color="#FF3D98D1" Offset="0" />
+          <GradientStop Color="#FF8FC3E4" Offset="1" />
+        </LinearGradientBrush>
+      </Rectangle.Fill>
+    </Rectangle>
+  </Grid>
+  <Grid HorizontalAlignment="Center">
+    <TextBlock Width="170" Foreground="#FF3D98D1" Text="0 %" TextWrapping="Nowrap" x:Name="txtLoading" FontSize="20" FontWeight="bold" FontFamily="Arial"  HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,20,0,0"/>
+  </Grid>
+</StackPanel>

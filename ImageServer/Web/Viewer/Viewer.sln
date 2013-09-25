@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macro.ImageViewer.Web.Client.Silverlight", "..\..\..\ImageViewer\Web\Client\Silverlight\Macro.ImageViewer.Web.Client.Silverlight.csproj", "{C27870CE-E0E1-4149-A2AE-485B6D5A0694}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macro.Web.Client.Silverlight", "..\..\..\Web\Client\Silverlight\Macro.Web.Client.Silverlight.csproj", "{1CAF9ABD-C8ED-4EF7-BDCF-C9FB3C23FA17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{3FBAD04C-4E48-417E-BE9F-028D80C62B1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macro.ImageServer.Web.Client.Silverlight", "..\Client\Silverlight\Macro.ImageServer.Web.Client.Silverlight.csproj", "{E1BE4829-FACF-4158-8F4F-2732BC4559D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C27870CE-E0E1-4149-A2AE-485B6D5A0694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C27870CE-E0E1-4149-A2AE-485B6D5A0694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C27870CE-E0E1-4149-A2AE-485B6D5A0694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C27870CE-E0E1-4149-A2AE-485B6D5A0694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CAF9ABD-C8ED-4EF7-BDCF-C9FB3C23FA17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CAF9ABD-C8ED-4EF7-BDCF-C9FB3C23FA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CAF9ABD-C8ED-4EF7-BDCF-C9FB3C23FA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CAF9ABD-C8ED-4EF7-BDCF-C9FB3C23FA17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1BE4829-FACF-4158-8F4F-2732BC4559D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1BE4829-FACF-4158-8F4F-2732BC4559D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1BE4829-FACF-4158-8F4F-2732BC4559D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1BE4829-FACF-4158-8F4F-2732BC4559D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

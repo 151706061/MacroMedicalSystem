@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Macro.ImageViewer.Web.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Macro.ImageViewer.Web.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LoadStudyOptions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExcludePriors" type="xs:boolean" />
+      <xs:element minOccurs="0" name="KeyImagesOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PreferredLayout" nillable="true" type="tns:LayoutConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LoadStudyOptions" nillable="true" type="tns:LoadStudyOptions" />
+  <xs:complexType name="LayoutConfiguration">
+    <xs:sequence>
+      <xs:element name="Columns" type="xs:int" />
+      <xs:element name="Rows" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LayoutConfiguration" nillable="true" type="tns:LayoutConfiguration" />
+</xs:schema>

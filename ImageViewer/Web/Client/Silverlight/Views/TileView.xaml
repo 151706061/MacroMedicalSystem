@@ -1,0 +1,43 @@
+﻿<!-- 
+// Copyright (c) 2011, Macro Inc.
+// All rights reserved.
+// http://www.Macro.ca
+//
+// This software is licensed under the Open Software License v3.0.
+// For the complete license, see http://www.Macro.ca/OSLv3.0
+-->
+<UserControl x:Class="Macro.ImageViewer.Web.Client.Silverlight.Views.TileView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    d:DesignHeight="193" d:DesignWidth="198">
+
+
+    <Border x:Name="TileImageBorder" Style="{StaticResource NormalTileBorderStyle}">
+        <Canvas x:Name="TileCanvas">
+            <Grid x:Name="LayoutRoot">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image x:Name="TileImage" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left">
+                </Image>
+                <TextBlock x:Name="DebugInformation" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="Yellow" Margin="10,10,0,0">
+
+                </TextBlock>
+            </Grid>
+            <Image x:Name="ClientCursorImage" IsHitTestVisible="False">
+            </Image>
+            <Popup Name="TileToolTip" Opened="TileToolTipOpened" SizeChanged="TileToolTipSizeChanged">
+                <Border x:Name="TooltipContent"
+                                    Style="{StaticResource InformationBoxStyle}"
+                                    IsHitTestVisible="False">
+                    <TextBlock x:Name="ToolTipText" Style="{StaticResource InformationBoxStyleTextStyle}" Margin="5" Text="Here is a tool tip"/>
+                </Border>
+            </Popup>
+        </Canvas>
+    </Border>
+</UserControl>

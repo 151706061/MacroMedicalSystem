@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Macro.Licenses.LicenseGenerator" GeneratedClassName="Licenses">
+  <Profiles />
+  <Settings>
+    <Setting Name="Key" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Macro</Value>
+    </Setting>
+    <Setting Name="IV" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">IsSoCool</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

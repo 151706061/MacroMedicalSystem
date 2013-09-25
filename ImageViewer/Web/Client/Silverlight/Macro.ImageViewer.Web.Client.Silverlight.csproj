@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C27870CE-E0E1-4149-A2AE-485B6D5A0694}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Macro.ImageViewer.Web.Client.Silverlight</RootNamespace>
+    <AssemblyName>Macro.ImageViewer.Web.Client.Silverlight</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.ComponentModel.Composition, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.Composition.Initialization, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Extensions, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.NetTcp, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\ActionDispatcher.cs" />
+    <Compile Include="Actions\HelpButton.xaml.cs">
+      <DependentUpon>HelpButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationActivityMonitor.cs" />
+    <Compile Include="Resources\DialogTitles.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DialogTitles.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatisticsPanel.xaml.cs">
+      <DependentUpon>StatisticsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ThrottlePanel.xaml.cs">
+      <DependentUpon>ThrottlePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ImageViewerResources.cs" />
+    <Compile Include="ServerApplicationStopEventArgs.cs" />
+    <Compile Include="ServerMessageSender.cs" />
+    <Compile Include="ViewModel\ImageViewerViewModel.cs" />
+    <Compile Include="Views\HelpDialogContent.xaml.cs">
+      <DependentUpon>HelpDialogContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\IActionUpdate.cs" />
+    <Compile Include="Actions\IToolstripButton.cs" />
+    <Compile Include="Actions\LayoutDropDownButton.xaml.cs">
+      <DependentUpon>LayoutDropDownButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\LayoutPopup.xaml.cs">
+      <DependentUpon>LayoutPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\DropDownButton.xaml.cs">
+      <DependentUpon>DropDownButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Actions\StandardButton.xaml.cs">
+      <DependentUpon>StandardButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationContext.cs" />
+    <Compile Include="ApplicationBridge.cs" />
+    <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="MacroStyle.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Controls\StudyBrowser.xaml.cs">
+      <DependentUpon>StudyBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\BrowserExtensions.cs" />
+    <Compile Include="Helpers\Cookies.cs" />
+    <Compile Include="Helpers\IMouseElement.cs" />
+    <Compile Include="Helpers\PopupHelper.cs" />
+    <Compile Include="Helpers\MouseHelper.cs" />
+    <Compile Include="Helpers\ResourceHelper.cs" />
+    <Compile Include="Helpers\ConnectionTester.cs" />
+    <Compile Include="Helpers\UIElementExtensions.cs" />
+    <Compile Include="Views\ImageViewer.xaml.cs">
+      <DependentUpon>ImageViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ErrorMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Labels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Labels.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ServerMessagePoller.cs" />
+    <Compile Include="PerformanceMonitor.cs" />
+    <Compile Include="ServerEventArgs.cs" />
+    <Compile Include="ServerEventMediator.cs" />
+    <Compile Include="Service References\AppServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\SR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\MenuBuilder.cs" />
+    <Compile Include="ThrottleSettings.cs" />
+    <Compile Include="ViewerSessionUpdatedEventArgs.cs" />
+    <Compile Include="Views\ImageBoxScrollbarView.xaml.cs">
+      <DependentUpon>ImageBoxScrollbarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImageBoxView.xaml.cs">
+      <DependentUpon>ImageBoxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controls\StudyInfo.cs" />
+    <Compile Include="Views\StudyView.xaml.cs">
+      <DependentUpon>StudyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TileView.xaml.cs">
+      <DependentUpon>TileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToolstripView.xaml.cs">
+      <DependentUpon>ToolstripView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WebActionNode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Actions\DropDownButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Actions\HelpButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\StatisticsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ThrottlePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Resource Include="Resources\ContextMenu.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Colors.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\LayoutTool.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Toolbar.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Tooltip.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\BusyIndicator.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\PopupWindow.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Scrollbar.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="Resources\Images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Resource Include="Resources\Tile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="Resources\MergedStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HelpDialogContent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actions\LayoutDropDownButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actions\LayoutPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Actions\StandardButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\StudyBrowser.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ImageViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ImageBoxScrollbarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ImageBoxView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StudyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ToolstripView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppServiceReference\ApplicationService22.wsdl" />
+    <None Include="Service References\AppServiceReference\ApplicationService23.wsdl" />
+    <None Include="Service References\AppServiceReference\ApplicationService26.wsdl" />
+    <None Include="Service References\AppServiceReference\ApplicationService27.wsdl" />
+    <None Include="Service References\AppServiceReference\ApplicationService513.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService514.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService515.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService516.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService517.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService518.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService56.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService57.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService58.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService59.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\AppServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\AppServiceReference\configuration.svcinfo" />
+    <None Include="Service References\AppServiceReference\Macro.ImageViewer.Web.Client.Silverlight.AppServiceReference.GetPendingEventRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AppServiceReference\Macro.ImageViewer.Web.Client.Silverlight.AppServiceReference.ProcessMessagesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AppServiceReference\Macro.ImageViewer.Web.Client.Silverlight.AppServiceReference.StartApplicationRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\AppServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\AppServiceReference\ApplicationService11.disco" />
+    <None Include="Service References\AppServiceReference\ApplicationService13.disco" />
+    <Content Include="ServiceReferences.ClientConfig" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DropDownArrow.png" />
+    <Resource Include="Images\HelpMedium.png" />
+    <Resource Include="Images\HelpLarge.png" />
+    <Resource Include="Images\HelpSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\DialogTitles.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>DialogTitles.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ErrorMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Labels.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Web\Client\Silverlight\Macro.Web.Client.Silverlight.csproj">
+      <Project>{1CAF9ABD-C8ED-4EF7-BDCF-C9FB3C23FA17}</Project>
+      <Name>Macro.Web.Client.Silverlight</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AppServiceReference\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

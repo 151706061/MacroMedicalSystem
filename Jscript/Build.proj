@@ -1,0 +1,74 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <DistributionBuild>false</DistributionBuild>
+    <Configuration>Debug</Configuration>
+  </PropertyGroup>
+
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Release' And '$(KeyFile)' != ''">
+      <PropertyGroup>
+        <CommonProperties>Platform=AnyCPU;Configuration=$(Configuration);SignAssembly=true;DelaySign=false;AssemblyOriginatorKeyFile=$(KeyFile)</CommonProperties>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <CommonProperties>Platform=AnyCPU;Configuration=$(Configuration)</CommonProperties>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <Choose>
+		<When Condition=" '$(Configuration)' == 'Debug' ">
+			<PropertyGroup>
+				<EmitDebugInformation>/debug+</EmitDebugInformation>
+			</PropertyGroup>
+		</When>
+		<When Condition=" '$(Configuration)' == 'Release' ">
+			<PropertyGroup>
+				<EmitDebugInformation>/debug-</EmitDebugInformation>
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+  <Target Name="Build" DependsOnTargets="Compile;SignAssembly">
+  </Target>
+
+  <Target Name="Compile" Inputs="Macro.Jscript.js;AssemblyInfo.js; ..\Common\bin\$(Configuration)\Macro.Common.dll" Outputs="bin\$(Configuration)\Macro.Jscript.dll">
+    <GetFrameworkPath>
+      <Output TaskParameter="Path" PropertyName="FxPath" />
+    </GetFrameworkPath>
+
+    <MakeDir Directories="bin\$(Configuration)" Condition="!Exists('bin\$(Configuration)')" />
+    <MSBuild Projects="..\Common\Macro.Common.csproj" Properties="$(CommonProperties)" />
+    <Exec Command="$(FxPath)\jsc $(EmitDebugInformation) /t:library /lib:..\Common\bin\$(Configuration) /out:bin\$(Configuration)\Macro.Jscript.dll Macro.Jscript.js AssemblyInfo.js"/>
+  </Target>
+
+  <Target Name="GetPaths">
+    <GetFrameworkPath>
+      <Output TaskParameter="Path" PropertyName="FxPath" />
+    </GetFrameworkPath>
+    <GetFrameworkSdkPath>
+      <Output TaskParameter="Path" PropertyName="SdkPath" />
+    </GetFrameworkSdkPath>
+
+    <!-- Set SdkWorkingDirectory based on presence of "ildasm.exe"
+      This is required because VisualStudio 2012 added Microsoft SDKs\Windows\v8.0A\bin, but ildasm.exe not found there.  Thus, try bin\NETFX 4.0 Tools\.
+      Flow still allows for VisualStudio 2010 only (since ildasm.exe exists in Microsoft SDKs\Windows\v7.0A\bin).
+    -->
+    <PropertyGroup>
+      <SdkWorkingDirectory Condition="Exists('$(SdkPath)\bin\ildasm.exe')">$(SdkPath)\bin\</SdkWorkingDirectory>
+      <SdkWorkingDirectory Condition="Exists('$(SdkPath)\bin\NETFX 4.0 Tools\ildasm.exe') And '$(SdkWorkingDirectory)' == ''">$(SdkPath)\bin\NETFX 4.0 Tools\</SdkWorkingDirectory>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="SignAssembly" DependsOnTargets="Compile;GetPaths" Condition="'$(Configuration)' == 'Release' And '$(KeyFile)' != ''">
+    <!-- The JScript compiler doesn't have options for strong naming the assemblies, so we have to reassemble the library here with a strong name -->
+    <!--Message Text="Fx Path = $(FxPath)%0ASDK Path = $(SdkPath)%0ASDK Working Directory = $(SdkWorkingDirectory)"/-->
+
+    <MakeDir Directories="obj\$(Configuration)" Condition="!Exists('obj\$(Configuration)')" />
+    <Delete Files="obj\$(Configuration)\*.*" />
+    <Exec Command="ildasm /nobar &quot;$(MSBuildProjectDirectory)\bin\$(Configuration)\Macro.Jscript.dll&quot; &quot;/out:$(MSBuildProjectDirectory)\obj\$(Configuration)\Macro.Jscript.il&quot;" WorkingDirectory="$(SdkWorkingDirectory)"/>
+    <Exec Command="ilasm /quiet &quot;$(MSBuildProjectDirectory)\obj\$(Configuration)\Macro.Jscript.il&quot; &quot;/key=$(KeyFile)&quot; /dll &quot;/output=$(MSBuildProjectDirectory)\bin\$(Configuration)\Macro.Jscript.dll&quot;" WorkingDirectory="$(FxPath)" />
+    <Message Text="Macro.Jscript.dll signed with strong name" />
+  </Target>
+</Project>

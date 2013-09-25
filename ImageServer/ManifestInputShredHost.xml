@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManifestInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ClearCanvas.ca">
+  <Files>
+    <File name="scripts" ignore="true" />
+    <File name="Macro.ImageServer.Executable.exe" checksum="true" />
+    <File name="Macro.ImageServer.Executable.exe.config" config="true" />
+    <File name="Macro.ImageServer.Executable.exe.critical.config" checksum="true" config="true" />
+    <File name="Macro.ImageServer.ShredHostService.exe" checksum="true" />
+    <File name="Macro.ImageServer.ShredHostService.exe.config" config="true" />
+    <File name="Macro.ImageServer.ShredHostService.exe.critical.config" checksum="true" config="true" />
+    <File name="PrivacyNotice.rtf" />
+    <File name="Logging.config" ignore="true" />
+    <File name="logs\" ignore="true" />
+    <File name="manifest\" ignore="true" />
+    <File name="common\Castle.Core.dll" checksum="true" />
+    <File name="common\Castle.DynamicProxy2.dll" checksum="true" />
+    <File name="common\Macro.Common.dll" checksum="true" />
+    <File name="common\Macro.Server.ShredHost.dll" checksum="true" />
+    <File name="common\Iesi.Collections.dll" checksum="true" />
+    <File name="common\Ionic.Zip.dll" checksum="true" />
+    <File name="common\log4net.dll" checksum="true" />
+    <File name="common\nunit.framework.dll" checksum="true" />
+    <File name="plugins\Macro.Dicom.Codec.Jpeg.dll" checksum="true" />
+    <File name="plugins\Macro.Dicom.Codec.Rle.dll" checksum="true" />
+    <File name="plugins\Macro.Dicom.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Model.dll" checksum="true" />
+    <File name="plugins\Macro.Dicom.Codec.Jpeg.dll" checksum="true" />
+    <File name="plugins\Macro.Dicom.Codec.Rle.dll" checksum="true" />
+    <File name="plugins\Macro.Enterprise.Common.dll" checksum="true" />
+    <File name="plugins\Macro.Enterprise.Core.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Common.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Core.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Enterprise.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Enterprise.SqlServer.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Model.SqlServer.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Rules.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Rules.JpegCodec.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Rules.RleCodec.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Services.Archiving.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Services.Archiving.Hsm.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Services.Common.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Services.Dicom.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Services.ServiceLock.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Services.Streaming.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Services.WorkQueue.dll" checksum="true" />
+    <File name="plugins\Macro.ImageServer.Utilities.dll" checksum="true" />
+    <File name="plugins\Macro.Utilities.Manifest.dll" checksum="true" />
+  </Files>
+</ManifestInput>

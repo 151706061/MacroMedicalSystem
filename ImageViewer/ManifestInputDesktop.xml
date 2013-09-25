@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ManifestInput xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ClearCanvas.ca">
+  <Files>
+    <File name="app.ico" ignore="true"/>
+    <File name="Macro Workstation.url" ignore="true"/>
+    <File name="install.log" ignore="true" />
+    <File name="uninst.exe" ignore="true" />
+    <File name="uninstall.log" ignore="true" />
+    <File name="EULA.rtf" />
+    <File name="PrivacyNotice.rtf" />
+    <File name="Logging.config" ignore="true" />
+    <File name="logs\" ignore="true" />
+    <File name="filestore\" ignore="true" />
+    <File name="manifest\" ignore="true" />
+    <File name="dicom_interim\" ignore="true" />
+    <File name="badfiles\" ignore="true" />
+    <File name="Macro.Desktop.Executable.exe" checksum="true" />
+    <File name="Macro.Desktop.Executable.exe.config" config="true" />
+    <File name="Macro.Desktop.Executable.exe.critical.config" checksum="true" config="true" />
+    <File name="Macro.Server.ShredHostService.exe" checksum="true" />
+    <File name="Macro.Server.ShredHostService.exe.config" config="false" />
+    <File name="Macro.Server.ShredHostService.exe.critical.config"  checksum="true" config="true" />
+    <File name="Macro.Executable.exe" checksum="true" />
+    <File name="Macro.Executable.exe.config" config="false" />
+    <File name="Macro.Executable.exe.critical.config" checksum="true" config="false" />
+    <File name="DicomAEServers.xml" ignore="true"/>
+    <File name="common\DotNetMagic2005.DLL" />
+    <File name="common\log4net.dll" checksum="true" />
+    <File name="common\sqlceca40.dll" checksum="true" />
+    <File name="common\sqlcecompact40.dll" checksum="true" />
+    <File name="common\sqlceer40EN.dll" checksum="true" />
+    <File name="common\sqlceme40.dll" checksum="true" />
+    <File name="common\sqlceqp40.dll" checksum="true" />
+    <File name="common\sqlcese40.dll" checksum="true" />
+    <File name="common\System.Data.SqlServerCe.dll" checksum="true" />
+    <File name="common\Macro.Common.dll" checksum="true" />
+    <File name="common\Macro.Server.ShredHost.dll" checksum="true" />
+    <File name="plugins\BilinearInterpolation.dll" checksum="true" />
+    <File name="plugins\Macro.Controls.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.Desktop.dll" checksum="true" />
+    <File name="plugins\Macro.Desktop.ExtensionBrowser.dll" checksum="true" />
+    <File name="plugins\Macro.Desktop.ExtensionBrowser.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.Desktop.Help.dll" checksum="true" />
+    <File name="plugins\Macro.Desktop.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.Dicom.dll" checksum="true" />
+    <File name="plugins\Macro.Dicom.Codec.Jpeg.dll" checksum="true" />
+    <File name="plugins\Macro.Dicom.Codec.Rle.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.AnnotationProviders.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Clipboard.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Clipboard.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Common.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Configuration.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Configuration.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Layout.Basic.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Layout.Basic.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Shreds.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.StudyManagement.Core.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Thumbnails.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Thumbnails.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Tools.Measurement.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Tools.Measurement.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Tools.Standard.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.Tools.Standard.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.ImageViewer.View.WinForms.dll" checksum="true" />
+    <File name="plugins\Macro.Jscript.dll" checksum="true" />
+    <File name="plugins\Macro.Utilities.Manifest.dll" checksum="true" />
+  </Files>
+</ManifestInput>

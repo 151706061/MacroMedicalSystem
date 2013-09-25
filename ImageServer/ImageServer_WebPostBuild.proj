@@ -1,0 +1,148 @@
+<Project DefaultTargets="CopyPlugins;CopyBin;CopyConfigFiles;Build Web Viewer;AddSplashScreen" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Choose>
+    <When Condition=" '$(PROCESSOR_ARCHITEW6432)' == 'IA64' Or '$(PROCESSOR_ARCHITEW6432)' == 'AMD64' Or '$(PROCESSOR_ARCHITECTURE)' == 'IA64' Or '$(PROCESSOR_ARCHITECTURE)' == 'AMD64'">
+      <PropertyGroup>
+        <BuildPlatform>x64</BuildPlatform>
+      </PropertyGroup>
+    </When>
+    <When Condition="'$(PROCESSOR_ARCHITECTURE)' == 'x86' ">
+      <PropertyGroup>
+        <BuildPlatform>x86</BuildPlatform>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup>
+        <BuildPlatform></BuildPlatform>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <PropertyGroup>
+    <TargetPlatform>$(BuildPlatform)</TargetPlatform>
+    <TrunkDirectory>$(ProjectDir)..\..\..</TrunkDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <WebViewerSolutionDir>$(ProjectDir)..\Viewer</WebViewerSolutionDir>
+    <SilverlightBinFolder>$(ProjectDir)ClientBin</SilverlightBinFolder>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <ImageViewerWebClientSilverlightXAPOutputDir>$(TrunkDirectory)\ImageServer\Web\Client\Silverlight\bin\$(Configuration)</ImageViewerWebClientSilverlightXAPOutputDir>
+  </PropertyGroup>
+
+
+  <Choose>
+    <When Condition=" '$(BuildPlatform)' == 'x64' ">
+      <PropertyGroup>
+        <PlatformSubFolder>$(BuildPlatform)</PlatformSubFolder>
+      </PropertyGroup>
+    </When>
+    <When Condition=" '$(TargetPlatform)' != 'x86' ">
+      <PropertyGroup>
+        <PlatformSubFolder>$(TargetPlatform)</PlatformSubFolder>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <!-- assumes Win32 -->
+
+      <PropertyGroup>
+        <PlatformSubFolder></PlatformSubFolder>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+
+  <UsingTask TaskName="Macro.Utilities.BuildTasks.CombineAppConfigs" AssemblyFile="$(TrunkDirectory)\Utilities\BuildTasks\bin\$(Configuration)\Macro.Utilities.BuildTasks.dll"/>
+
+
+  <ItemGroup>
+    <LogConfigFiles Include="$(ProjectDir)\..\..\..\ImageServer\Executable\Logging.config"/>
+
+    <WebCriticalConfigCreatorSourceFiles Include="$(SolutionDir)\$(SolutionName)_web_critical.config"/>
+    <WebConfig Include="$(SolutionDir)\$(SolutionName)_Web.config"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PluginFiles Include="$(ProjectDir)\..\..\Enterprise\SqlServer\bin\$(Configuration)\Macro.ImageServer.Enterprise.SqlServer.dll"/>
+    <PluginFiles Include="$(ProjectDir)\..\..\Model\SqlServer\bin\$(Configuration)\Macro.ImageServer.Model.SqlServer.dll"/>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <WebViewerPlugins Include="$(TrunkDirectory)\Desktop\bin\$(Configuration)\Macro.Desktop.dll"/>
+
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageServer\Utilities\bin\$(Configuration)\Macro.ImageServer.Utilities.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\AnnotationProviders\bin\$(Configuration)\Macro.ImageViewer.AnnotationProviders.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Configuration\bin\$(Configuration)\Macro.ImageViewer.Configuration.dll"/>
+
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\bin\$(Configuration)\Macro.ImageViewer.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Common\bin\$(Configuration)\Macro.ImageViewer.Common.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Layout\Basic\bin\$(Configuration)\Macro.ImageViewer.Layout.Basic.dll"/>
+
+    <!--<WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Services\bin\$(Configuration)\Macro.ImageViewer.Services.dll"/>-->
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\StudyFinders\Remote\bin\$(Configuration)\Macro.ImageViewer.StudyFinders.Remote.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\StudyLoaders\Streaming\bin\$(Configuration)\Macro.ImageViewer.StudyLoaders.Streaming.dll"/>
+
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Tools\Measurement\bin\$(Configuration)\Macro.ImageViewer.Tools.Measurement.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Tools\Standard\bin\$(Configuration)\Macro.ImageViewer.Tools.Standard.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Tools\Synchronization\bin\$(Configuration)\Macro.ImageViewer.Tools.Synchronization.dll"/>
+
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Web\Common\bin\$(Configuration)\Macro.ImageViewer.Web.Common.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Web\bin\$(Configuration)\Macro.ImageViewer.Web.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\ImageViewer\Web\Server\ImageServer\bin\$(Configuration)\Macro.ImageViewer.Web.Server.ImageServer.dll"/>
+
+    <WebViewerPlugins Include="$(TrunkDirectory)\JScript\bin\$(Configuration)\Macro.Jscript.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\Utilities\Manifest\bin\$(Configuration)\Macro.Utilities.Manifest.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\Web\Common\bin\$(Configuration)\Macro.Web.Common.dll"/>
+    <WebViewerPlugins Include="$(TrunkDirectory)\Web\Services\bin\$(Configuration)\Macro.Web.Services.dll"/>
+
+    <WebViewerPlugins Include="$(TrunkDirectory)\ReferencedAssemblies\Interpolators\$(PlatformSubFolder)\BilinearInterpolation.dll"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <CodecPlugins Condition=" '$(TargetPlatform)' == 'x86' " Include="$(TrunkDirectory)\ReferencedAssemblies\Codecs\$(PlatformSubFolder)\Macro.Dicom.Codec.Jpeg.dll"/>
+    <CodecPlugins Include="$(TrunkDirectory)\Dicom\Codec\Rle\bin\$(Configuration)\Macro.Dicom.Codec.Rle.dll"/>
+  </ItemGroup>
+
+
+  <Target Name="CopyPlugins">
+    <Message Text="Copying plugin assemblies into plugins folder (ASP.NET Development Server must not be running)"/>
+    <Message Text="$(ProjectDir)"/>
+    <Message Text="@(PluginFiles)"/>
+    <Message Text="@(WebViewerPlugins)"/>
+    <Message Text="$(CodecPlugins)"/>
+
+    <Copy SkipUnchangedFiles="false" SourceFiles="@(PluginFiles)" DestinationFolder="$(ProjectDir)\bin"/>
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(WebViewerPlugins)" DestinationFolder="$(ProjectDir)\bin"/>
+    <Copy SkipUnchangedFiles="false" SourceFiles="@(CodecPlugins)" DestinationFolder="$(ProjectDir)\bin"/>
+  </Target>
+  <Target Name="CopyBin">
+    <Message Text="Copying common assemblies into bin folder (ASP.NET Development Server must not be running)"/>
+    <Message Text="$(ProjectDir)"/>
+    <Message Text="@(BinFiles)"/>
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(BinFiles)" DestinationFolder="$(ProjectDir)\bin"/>
+  </Target>
+  <Target Name="CopyConfigFiles">
+    <Copy SkipUnchangedFiles="true" SourceFiles="@(LogConfigFiles)" DestinationFiles="$(ProjectDir)\Logging.config"/>
+
+    <CombineAppConfigs CheckDependency="false" SourceFiles="@(WebCriticalConfigCreatorSourceFiles)"
+						   OutputFile="$(ProjectDir)\critical.config"/>
+
+    <Copy SkipUnchangedFiles="false" SourceFiles="@(WebConfig)" DestinationFiles="$(ProjectDir)\Web.config"/>
+
+  </Target>
+
+  <Target Name="Build Web Viewer">
+    <Message Text="Building Web Viewer"/>
+    <MSBuild Projects="$(WebViewerSolutionDir)\Viewer.sln"  Properties="ProjectDir=$(ProjectDir);Configuration=$(Configuration);"/>
+    <Message Text="Updating Silverlight Package"/>
+    <Delete Files="$(SilverlightBinFolder)\Silverlight.xap" />
+    <Copy SourceFiles="$(ImageViewerWebClientSilverlightXAPOutputDir)\Silverlight.xap"  DestinationFolder="$(SilverlightBinFolder)"/>
+  </Target>
+
+  <Target Name="AddSplashScreen">
+    <Message Text="Adding ImageServer splash screen"/>
+    <Copy SourceFiles="$(ProjectDir)\Builds\SplashScreen\LoginSplash.png"
+			  DestinationFolder="$(ProjectDir)\App_Themes\Default\images"/>
+  </Target>
+</Project>

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Macro.Web.Client.Silverlight.Views.LogPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:Macro.Web.Client.Silverlight.Views"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" MaxHeight="250">
+
+    <UserControl.Resources>
+        <vm:LocalViewModelLocator x:Key="Locator"/>
+    </UserControl.Resources>
+    
+    <Grid x:Name="LayoutRoot" Background="SlateGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="2,2,2,2">
+            <Button x:Name="ClearLog" HorizontalAlignment="Left" Content="Clear Log" Command="{Binding ClearLogCommand}"  DataContext="{Binding Source={StaticResource Locator}, Path=LogPanel}" Width="100"/>
+            <CheckBox AllowDrop="False" Content="Error" Margin="3,3,3,3" IsChecked="{Binding Path=ErrorLevel, Mode=TwoWay}"  DataContext="{Binding Source={StaticResource Locator}, Path=LogPanel}"/>
+            <CheckBox AllowDrop="False" Content="Warn" Margin="3,3,3,3" IsChecked="{Binding Path=WarnLevel, Mode=TwoWay}" DataContext="{Binding Source={StaticResource Locator}, Path=LogPanel}"/>
+            <CheckBox AllowDrop="False" Content="Info" Margin="3,3,3,3" IsChecked="{Binding Path=InfoLevel, Mode=TwoWay}" DataContext="{Binding Source={StaticResource Locator}, Path=LogPanel}"/>
+            <CheckBox AllowDrop="False" Content="Debug" Margin="3,3,3,3" IsChecked="{Binding Path=DebugLevel, Mode=TwoWay}" DataContext="{Binding Source={StaticResource Locator}, Path=LogPanel}"/>
+        </StackPanel>  
+        
+        <ScrollViewer  Grid.Row="1" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Stretch">
+            <TextBlock x:Name="Log" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Text="{Binding LogContents}" DataContext="{Binding Source={StaticResource Locator}, Path=LogPanel}"/>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E3707170-70CC-47B0-9412-16E1E2955D97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Macro.ImageViewer.Utilities.Media</RootNamespace>
+    <AssemblyName>Macro.ImageViewer.Utilities.Media</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileDirectoryUtility.cs" />
+    <Compile Include="IMediaWriterComponent.cs" />
+    <Compile Include="IMediaWriterOptionsComponent.cs" />
+    <Compile Include="LaunchMediaWriterDicomExplorerTool.cs" />
+    <Compile Include="MediaWriterComponent.cs" />
+    <Compile Include="MediaWriterOptionsComponent.cs" />
+    <Compile Include="MediaWriterSettings.cs" />
+    <Compile Include="MediaWriterSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>MediaWriterSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PortableViewer\MediaFileSet.cs" />
+    <Compile Include="PortableViewer\MediaFileSetEntityMapEntry.cs" />
+    <Compile Include="PortableViewer\MediaFileSetEntityMapEntryAlternative.cs" />
+    <Compile Include="PortableViewer\MediaFileSetEntityMapPatient.cs" />
+    <Compile Include="PortableViewer\MediaFileSetEntityMapSeries.cs" />
+    <Compile Include="PortableViewer\MediaFileSetEntityMapSop.cs" />
+    <Compile Include="PortableViewer\MediaFileSetEntityMapStudy.cs" />
+    <Compile Include="PortableViewer\MediaFileSetPrivateInformation.cs" />
+    <Compile Include="PortableViewer\MediaFileSetStudy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeriesTree.cs" />
+    <Compile Include="SR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="StudyTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SR.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Macro.Common.csproj">
+      <Project>{F6EAD428-E6CF-4DF6-B2F3-D33D532C5343}</Project>
+      <Name>Macro.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Media\Macro.Common.Media.csproj">
+      <Project>{FD5A9678-F8CC-4E72-8B64-060E2DD8BF85}</Project>
+      <Name>Macro.Common.Media</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Desktop\Macro.Desktop.csproj">
+      <Project>{26E9A01A-64B5-42C5-8252-FBB30DF9CEC7}</Project>
+      <Name>Macro.Desktop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Dicom\Macro.Dicom.csproj">
+      <Project>{AD9ECE2B-8268-4115-8DC8-860FBD011FFF}</Project>
+      <Name>Macro.Dicom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Macro.ImageViewer.csproj">
+      <Project>{85100D3E-471C-47C9-9687-ABF25F617ED7}</Project>
+      <Name>Macro.ImageViewer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Macro.ImageViewer.Common.csproj">
+      <Project>{FEFD73C5-8541-47D2-BBDB-FF61DEA28291}</Project>
+      <Name>Macro.ImageViewer.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Configuration\Macro.ImageViewer.Configuration.csproj">
+      <Project>{89DF567B-A0D1-456A-A28F-043FD57D7F9A}</Project>
+      <Name>Macro.ImageViewer.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Explorer\Dicom\Macro.ImageViewer.Explorer.Dicom.csproj">
+      <Project>{14111EC7-C62E-4483-8573-7C04986D048F}</Project>
+      <Name>Macro.ImageViewer.Explorer.Dicom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\StudyManagement\Core\Macro.ImageViewer.StudyManagement.Core.csproj">
+      <Project>{624BC225-49A8-4E92-942D-CDC976292EB9}</Project>
+      <Name>Macro.ImageViewer.StudyManagement.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icon\MediaWriterToolLarge.png" />
+    <EmbeddedResource Include="Icon\MediaWriterToolMedium.png" />
+    <EmbeddedResource Include="Icon\MediaWriterToolSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="MediaWriterSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MediaWriterSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

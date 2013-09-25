@@ -1,0 +1,14 @@
+﻿<UserControl xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"  xmlns:my="clr-namespace:Macro.Web.Client.Silverlight"  x:Class="Macro.Web.Client.Silverlight.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="391" d:DesignWidth="749" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">    
+    <Canvas x:Name="LayoutRoot" Background="#FFE5D5A1" Visibility="Visible">
+        <my:MenuManager.AttachedContextMenu>
+            <my:ContextMenu x:Name="ManagedMenu"/>
+        </my:MenuManager.AttachedContextMenu>
+        <sdk:Label Canvas.Left="304" Canvas.Top="226" Height="57" Name="label1" Width="225" Content="Right-click me!" IsHitTestVisible="False" FontSize="22" />
+    </Canvas>
+</UserControl>

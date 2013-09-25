@@ -1,0 +1,23 @@
+﻿<av:StackPanel xmlns="http://schemas.microsoft.com/client/2007"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:Drawing="clr-namespace:System.Drawing;assembly=System.Drawing"
+                xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" VerticalAlignment="Center" Margin="0,200,0,0">
+  <av:Image Source="SplashScreen/MacroWebViewerLogo.png" Width="339" Height="126"
+     HorizontalAlignment="Center"  VerticalAlignment="Center" />
+  <av:Grid HorizontalAlignment="Center" Margin="0,20,0,0">
+    <av:Rectangle x:Name="rectBorder" StrokeThickness="2" Stroke="#FF205F87"
+               Height="5" Width="600" HorizontalAlignment="Left"/>
+    <av:Rectangle x:Name="rectBar"
+               Height="5" Width="0" HorizontalAlignment="Left">
+      <av:Rectangle.Fill>
+        <av:LinearGradientBrush StartPoint="0.5,1" EndPoint="0.5,0" >
+          <av:GradientStop Color="#FF3D98D1" Offset="0" />
+          <av:GradientStop Color="#FF8FC3E4" Offset="1" />
+        </av:LinearGradientBrush>
+      </av:Rectangle.Fill>
+    </av:Rectangle>
+  </av:Grid>
+  <av:Grid HorizontalAlignment="Center">
+    <av:TextBlock Width="170" Foreground="#FF3D98D1" Text="0 %" TextWrapping="Nowrap" x:Name="txtLoading" FontSize="20" FontWeight="bold" FontFamily="Arial"  HorizontalAlignment="Center" VerticalAlignment="Center" Padding="0,20,0,0"/>
+  </av:Grid>
+</av:StackPanel>

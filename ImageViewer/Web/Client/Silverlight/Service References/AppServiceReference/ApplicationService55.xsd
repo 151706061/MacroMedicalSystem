@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://thanh/ImageServer/Services/ApplicationService.svc?xsd=xsd1" namespace="http://www.clearcanvas.ca/web/application" />
+  <xs:import schemaLocation="http://thanh/ImageServer/Services/ApplicationService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="SessionValidationFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SessionValidationFault" nillable="true" type="tns:SessionValidationFault" />
+  <xs:complexType name="InvalidOperationFault">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="InvalidOperationFault" nillable="true" type="tns:InvalidOperationFault" />
+  <xs:complexType name="ProcessMessagesResult">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://www.clearcanvas.ca/web/application" minOccurs="0" name="EventSet" nillable="true" type="q1:EventSet" />
+      <xs:element minOccurs="0" name="Pending" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProcessMessagesResult" nillable="true" type="tns:ProcessMessagesResult" />
+  <xs:complexType name="SetPropertyRequest">
+    <xs:sequence>
+      <xs:element name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SetPropertyRequest" nillable="true" type="tns:SetPropertyRequest" />
+</xs:schema>

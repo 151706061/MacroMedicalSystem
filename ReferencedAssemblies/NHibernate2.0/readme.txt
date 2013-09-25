@@ -1,0 +1,1 @@
+NHibernate.dll is a custom build, because needed to upgrade to Castle.DynamicProxy 2.1.

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="Macro.ImageViewer.ImageViewerComponent" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>ImageViewerComponent.cs</FileName>
+      <HashCode>QCCAoCABUChgIAAAgAMAAEAEFEAIEAAAIAgCCEAQIMQ=</HashCode>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CommandHistory" />
+      <Property Name="PhysicalWorkspace" />
+      <Property Name="LogicalWorkspace" />
+      <Property Name="EventBroker" />
+      <Property Name="StudyTree" />
+    </ShowAsAssociation>
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <AssociationLine Name="CommandHistory" Type="Macro.Desktop.CommandHistory" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="3.125" />
+        <Point X="2.875" Y="3.125" />
+        <Point X="2.875" Y="4.778" />
+        <Point X="4.5" Y="4.778" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="PhysicalWorkspace" Type="Macro.ImageViewer.IPhysicalWorkspace" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="3.125" />
+        <Point X="2.875" Y="3.125" />
+        <Point X="2.875" Y="2.354" />
+        <Point X="4.5" Y="2.354" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="LogicalWorkspace" Type="Macro.ImageViewer.ILogicalWorkspace" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="3.125" />
+        <Point X="2.875" Y="3.125" />
+        <Point X="2.875" Y="3.097" />
+        <Point X="4.5" Y="3.097" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="EventBroker" Type="Macro.ImageViewer.EventBroker" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="3.125" />
+        <Point X="2.875" Y="3.125" />
+        <Point X="2.875" Y="4.028" />
+        <Point X="4.5" Y="4.028" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="StudyTree" Type="Macro.ImageViewer.StudyManagement.StudyTree" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.5" Y="3.125" />
+        <Point X="2.875" Y="3.125" />
+        <Point X="2.875" Y="1.278" />
+        <Point X="4.5" Y="1.278" />
+      </Path>
+    </AssociationLine>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Macro.Desktop.CommandHistory" Collapsed="true">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Macro.ImageViewer.EventBroker" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>EventBroker.cs</FileName>
+      <HashCode>gAgAAgAAAAgAAIAAEIABAgAQBAAAigECAAqAFAogAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Macro.ImageViewer.StudyManagement.StudyTree" Collapsed="true">
+    <Position X="4.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>StudyManagement\StudyTree.cs</FileName>
+      <HashCode>AAAAAAAAACAAAEgiAACAABAAAkFIAAAABAAAAACDACA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Macro.ImageViewer.ILogicalWorkspace" Collapsed="true">
+    <Position X="4.5" Y="2.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>ILogicalWorkspace.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAAgAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Macro.ImageViewer.IPhysicalWorkspace" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>IPhysicalWorkspace.cs</FileName>
+      <HashCode>AAAAAAAAAABABEAACAAAAAAAEAAAAgBAAAACCAkAAAA=</HashCode>
+    </TypeIdentifier>
+  </Interface>
+</ClassDiagram>

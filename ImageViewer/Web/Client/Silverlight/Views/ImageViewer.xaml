@@ -1,0 +1,54 @@
+﻿<!-- 
+// Copyright (c) 2011, Macro Inc.
+// All rights reserved.
+// http://www.Macro.ca
+//
+// This software is licensed under the Open Software License v3.0.
+// For the complete license, see http://www.Macro.ca/OSLv3.0
+-->
+<UserControl x:Class="Macro.ImageViewer.Web.Client.Silverlight.Views.ImageViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"       
+    xmlns:Controls="clr-namespace:Macro.Web.Client.Silverlight.Views;assembly=Macro.Web.Client.Silverlight"            
+    xmlns:Views="clr-namespace:Macro.ImageViewer.Web.Client.Silverlight.Views"
+    xmlns:Resources="clr-namespace:Macro.ImageViewer.Web.Client.Silverlight.Resources"
+    >
+
+    <UserControl.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary>
+                        <Resources:ImageViewerResources x:Key="ImageViewerResources"/>
+                    </ResourceDictionary>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Controls:BusyIndicator x:Name="busyIndicator"                              
+                             IsBusy="{Binding IsLoading}" >
+        <Controls:BusyIndicator.BusyContent>
+            <TextBlock Text="{Binding Path=Labels.LoadingStudy, Source={StaticResource ImageViewerResources}}" Foreground="White"/>
+        </Controls:BusyIndicator.BusyContent>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="LayoutRoot" Grid.Column="0" Background="Black">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="ToolbarContainer"  Grid.Row="0" Background="Black">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Views:ToolstripView x:Name="ToolstripViewComponent" Grid.Column="0" />
+                </Grid>
+                <Grid x:Name="StudyViewContainer"  Grid.Row="1" Background="Black" >
+                </Grid>
+            </Grid>
+
+        </Grid>
+    </Controls:BusyIndicator>
+</UserControl>

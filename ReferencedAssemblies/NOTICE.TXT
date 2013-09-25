@@ -1,0 +1,7 @@
+NOTICE
+
+The ClearCanvas open source RIS/PACS project incorporates and licenses existing
+open source software from other projects. Those licenses, the software they
+apply to, and their authors are acknowledged in the root project's NOTICE.TXT
+file.
+

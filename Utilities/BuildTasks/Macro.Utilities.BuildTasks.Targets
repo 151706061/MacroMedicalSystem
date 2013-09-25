@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project DefaultTargets="Test" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MacroBuildTasksPath Condition="'$(MacroBuildTasksPath)' == ''">$(MSBuildExtensionsPath)\MacroBuildTasks</MacroBuildTasksPath>
+    <MacroTasksDll>$(MacroBuildTasksPath)\Macro.Utilities.BuildTasks.dll</MacroTasksDll>
+  </PropertyGroup>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.CombineAppConfigs"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.CombineStrings"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.FileReplaceText"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.NUnitLogParser"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.RegexIsMatch"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.RelativeBuildDateTime"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.SendEmail"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.VersionProjects"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.VersionWebFiles"/> 
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.XmlFileRemoveNodes"/>
+  <UsingTask AssemblyFile="$(MacroTasksDll)" TaskName="Macro.Utilities.BuildTasks.XmlReplaceValue"/>
+</Project>

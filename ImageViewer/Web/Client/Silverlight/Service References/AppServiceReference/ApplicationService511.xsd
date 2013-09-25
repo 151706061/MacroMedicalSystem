@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://www.clearcanvas.ca/web/application" elementFormDefault="qualified" targetNamespace="http://www.clearcanvas.ca/web/application" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/WebPortal/Services/ApplicationService.svc?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost/WebPortal/Services/ApplicationService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/WebPortal/Services/ApplicationService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" />
+  <xs:complexType name="ApplicationNotFoundEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Event">
+        <xs:sequence>
+          <xs:element name="ApplicationId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApplicationNotFoundEvent" nillable="true" type="tns:ApplicationNotFoundEvent" />
+  <xs:complexType name="Event">
+    <xs:sequence>
+      <xs:element name="Identifier" type="ser:guid" />
+      <xs:element minOccurs="0" name="Sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Event" nillable="true" type="tns:Event" />
+  <xs:complexType name="ApplicationStartedEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Event">
+        <xs:sequence>
+          <xs:element name="Application" nillable="true" type="tns:Application" />
+          <xs:element name="StartRequestId" type="ser:guid" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApplicationStartedEvent" nillable="true" type="tns:ApplicationStartedEvent" />
+  <xs:complexType name="Application">
+    <xs:sequence>
+      <xs:element name="Identifier" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Application" nillable="true" type="tns:Application" />
+  <xs:complexType name="ApplicationStoppedEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Event">
+        <xs:sequence>
+          <xs:element name="IsTimedOut" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ApplicationStoppedEvent" nillable="true" type="tns:ApplicationStoppedEvent" />
+  <xs:complexType name="EntityUpdatedEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Event">
+        <xs:sequence>
+          <xs:element name="Entity" nillable="true" type="tns:Entity" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EntityUpdatedEvent" nillable="true" type="tns:EntityUpdatedEvent" />
+  <xs:complexType name="Entity">
+    <xs:sequence>
+      <xs:element name="Identifier" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Entity" nillable="true" type="tns:Entity" />
+  <xs:complexType name="PropertyChangedEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Event">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DebugInfo" nillable="true" type="q1:ArrayOfstring" />
+          <xs:element minOccurs="0" name="PropertyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PropertyChangedEvent" nillable="true" type="tns:PropertyChangedEvent" />
+  <xs:complexType name="SessionUpdatedEvent">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Event">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ExpiryTimeUtc" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SessionUpdatedEvent" nillable="true" type="tns:SessionUpdatedEvent" />
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element name="Identifier" type="ser:guid" />
+      <xs:element minOccurs="0" name="TargetId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Message" nillable="true" type="tns:Message" />
+  <xs:complexType name="UpdatePropertyMessage">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Message">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="PropertyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdatePropertyMessage" nillable="true" type="tns:UpdatePropertyMessage" />
+  <xs:complexType name="StartApplicationRequest">
+    <xs:sequence>
+      <xs:element name="Identifier" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsSessionShared" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MetaInformation" nillable="true" type="tns:MetaInformation" />
+      <xs:element minOccurs="0" name="SessionId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StartApplicationRequest" nillable="true" type="tns:StartApplicationRequest" />
+  <xs:complexType name="MetaInformation">
+    <xs:sequence>
+      <xs:element name="Language" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetaInformation" nillable="true" type="tns:MetaInformation" />
+  <xs:element name="StartApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:StartApplicationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StartApplicationResult" nillable="true" type="tns:StartApplicationRequestResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StartApplicationRequestResponse">
+    <xs:sequence>
+      <xs:element name="AppIdentifier" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StartApplicationRequestResponse" nillable="true" type="tns:StartApplicationRequestResponse" />
+  <xs:complexType name="OutOfResourceFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutOfResourceFault" nillable="true" type="tns:OutOfResourceFault" />
+  <xs:element name="StopApplication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:StopApplicationRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="StopApplicationRequest">
+    <xs:sequence>
+      <xs:element name="ApplicationId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopApplicationRequest" nillable="true" type="tns:StopApplicationRequest" />
+  <xs:element name="StopApplicationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messages" nillable="true" type="tns:MessageSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="MessageSet">
+    <xs:sequence>
+      <xs:element name="ApplicationId" type="ser:guid" />
+      <xs:element name="Messages" nillable="true" type="tns:ArrayOfMessage" />
+      <xs:element name="Number" type="xs:int" />
+      <xs:element name="Timestamp" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageSet" nillable="true" type="tns:MessageSet" />
+  <xs:complexType name="ArrayOfMessage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Message" nillable="true" type="tns:Message" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessage" nillable="true" type="tns:ArrayOfMessage" />
+  <xs:element name="ProcessMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" minOccurs="0" name="ProcessMessagesResult" nillable="true" type="q2:ProcessMessagesResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="EventSet">
+    <xs:sequence>
+      <xs:element name="ApplicationId" type="ser:guid" />
+      <xs:element name="Events" nillable="true" type="tns:ArrayOfEvent" />
+      <xs:element name="HasMorePending" type="xs:boolean" />
+      <xs:element name="Number" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventSet" nillable="true" type="tns:EventSet" />
+  <xs:complexType name="ArrayOfEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Event" nillable="true" type="tns:Event" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEvent" nillable="true" type="tns:ArrayOfEvent" />
+  <xs:element name="GetPendingEvent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:GetPendingEventRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetPendingEventRequest">
+    <xs:sequence>
+      <xs:element name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="MaxWaitTime" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPendingEventRequest" nillable="true" type="tns:GetPendingEventRequest" />
+  <xs:element name="GetPendingEventResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetPendingEventResult" nillable="true" type="tns:GetPendingEventRequestResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="GetPendingEventRequestResponse">
+    <xs:sequence>
+      <xs:element name="ApplicationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="EventSet" nillable="true" type="tns:EventSet" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GetPendingEventRequestResponse" nillable="true" type="tns:GetPendingEventRequestResponse" />
+  <xs:element name="ReportPerformance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="data" nillable="true" type="tns:PerformanceData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PerformanceData">
+    <xs:sequence>
+      <xs:element name="ClientIp" nillable="true" type="xs:string" />
+      <xs:element name="Name" nillable="true" type="xs:string" />
+      <xs:element name="Value" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PerformanceData" nillable="true" type="tns:PerformanceData" />
+  <xs:element name="SetProperty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ClearCanvas.Web.Common" minOccurs="0" name="request" nillable="true" type="q3:SetPropertyRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetPropertyResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

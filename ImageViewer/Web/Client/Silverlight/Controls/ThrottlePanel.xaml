@@ -1,0 +1,64 @@
+﻿<!-- 
+// Copyright (c) 2010, Macro Inc.
+// All rights reserved.
+// http://www.Macro.ca
+//
+// This software is licensed under the Open Software License v3.0.
+// For the complete license, see http://www.Macro.ca/OSLv3.0
+-->
+    
+<UserControl x:Class="Macro.ImageViewer.Web.Client.Silverlight.Controls.ThrottlePanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:toolkitinput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:local="clr-namespace:Macro.ImageViewer.Web.Client.Silverlight.Controls" 
+    >
+
+
+    <toolkit:WrapPanel Name="LayoutRoot">
+        <StackPanel>
+            <StackPanel.Resources>
+                <local:EnumValuesConverter x:Name="enumConverter"/>
+            </StackPanel.Resources>
+
+            <StackPanel Margin="10" Visibility="Collapsed">
+                <CheckBox x:Name="SimulateTrafficChaos" Content="Randomly Shuffle Msg Order" Foreground="White" IsChecked="{Binding SimulateNetworkTrafficOrder, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Margin="10" Visibility="Collapsed">
+                <CheckBox Content="Enable FPS Cap (approx 20 fps)" Foreground="White" IsChecked="{Binding EnableFPSCap, Mode=TwoWay}"/>
+            </StackPanel>
+
+            <StackPanel Margin="10">
+                <TextBlock Text="Mouse Move Msg" Foreground="White"/>
+                <ComboBox x:Name="Strategies" Foreground="Black" ItemsSource="{Binding Strategy, Converter={StaticResource enumConverter}, Mode=OneTime}"
+                          SelectedItem="{Binding Strategy, Mode=TwoWay}" IsEnabled="False">
+                </ComboBox>
+            </StackPanel>
+            <StackPanel x:Name="RTTWithOffsetPanel"  Margin="10" Visibility="Collapsed" >
+                <TextBlock Text="Offset (ms)" Foreground="White"/>
+                <toolkitinput:NumericUpDown  Foreground="White" Minimum="-200" Maximum="200" Value="{Binding MouseMoveOffset, Mode=TwoWay}"  Increment="10"/>
+            </StackPanel>
+            <StackPanel Margin="10">
+                <TextBlock Text="Max Pending MouseMoveMsg RESPs" Foreground="White"/>
+                <toolkitinput:NumericUpDown  Foreground="White" Minimum="1" Maximum="20" Value="{Binding MaxPendingMouseMoveMsgAllowed, Mode=TwoWay}"  Increment="1"/>
+            </StackPanel>
+
+            <StackPanel Margin="10" >
+                <TextBlock Text="Lag Detection" Foreground="White"/>
+                <ComboBox x:Name="LagDetectionStrategies" Foreground="Black" ItemsSource="{Binding LagDetectionStrategy, Converter={StaticResource enumConverter}, Mode=OneTime}"
+                          SelectedItem="{Binding LagDetectionStrategy, Mode=TwoWay}" IsEnabled="False">
+                                        
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Margin="10" >
+                <CheckBox Content="Enable Dynamic Image Quality" Foreground="White" IsChecked="{Binding EnableDynamicImageQuality, Mode=TwoWay}"/>
+            </StackPanel>
+        </StackPanel>
+    </toolkit:WrapPanel>
+</UserControl>

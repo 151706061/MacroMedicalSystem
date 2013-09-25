@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <style>
+        body {
+            font-family: sans-serif;
+            font-size: large;
+            background: #555555;
+        }
+        
+        #content 
+        {
+            width: 800px ;
+            margin-left: auto ;
+            margin-right: auto ;
+            margin-top: 100px;
+            border: solid 2px #0C2535;
+            padding: 15px 15px 15px 15px;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+<form action="Launch.aspx" method="post" target="_blank">
+
+<div id="content">
+
+<span style="font-size:x-large; font-weight:bold; margin:10px">Standalone WebStation Demo</span>
+
+<table style="margin-top: 10px; margin-left: 10px;">
+<tr>
+<td>Username:</td><td><input type="text" name="username" size="20"/></td>
+</tr>
+<tr>
+<td>Password:</td><td><input type="password" name="password" size="20" /></td>
+</tr>
+<tr>
+<td>List Studies:</td><td><input type="text" name="liststudies" size="20" value="true"/></td>
+</tr>
+<tr>
+<td>Init String:</td><td><input type="text" name="WebViewerInitParams" 
+    value="application=epr,aetitle=,study=,patientid=,accession=" size="100" /></td>
+</tr>
+<tr>
+<td></td>
+<td>
+    <div style="margin-top:10px">
+    <span style="font-size:small;font-weight:bold;">Examples (see document for more info):</span>
+        <table style="font-size:small; margin:10px" cellpadding="5">
+            <tr valign="top">
+            <td>application=epr,aetitle=ImageServer,study=1.2.3.5.6.7</td>
+            <td>=> Open a study with Study Instance UID 1.2.3.5.6.7 </td>
+            </tr>
+            
+            <tr valign="top">
+                <td>application=epr,aetitle=ImageServer,patientid=3333*</td>
+                <td>=> Open all studies for patient whose Patient ID begins with 3333. If list studies is true and there are multiple matches, user will have to pick a study </td>
+            </tr> 
+        </table>
+    </div>
+    </td>
+</tr>
+<tr>
+<td></td>
+<td style="padding-top: 10px; text-align:center"><input type="submit" value="Submit" /></td>
+</tr>
+
+</table>
+</div>
+
+</form>
+
+</body>
+</html>

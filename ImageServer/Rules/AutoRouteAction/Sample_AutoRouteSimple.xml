@@ -1,0 +1,15 @@
+﻿<!-- 
+This rule instructs the server to auto-route Chest studies to Macro
+-->
+<rule>
+	<condition
+	  expressionLanguage="dicom">
+		<regex
+		  test="$StudyDescription"
+		  pattern="chest" />
+	</condition>
+	<action>
+		<auto-route
+		  device="Macro" />
+	</action>
+</rule>

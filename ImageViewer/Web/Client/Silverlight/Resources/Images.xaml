@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ImageSource x:Key="HelpButtonImageSmall">/Macro.ImageViewer.Web.Client.Silverlight;component/Images/HelpSmall.png</ImageSource>
+    <ImageSource x:Key="HelpButtonImageMedium">/Macro.ImageViewer.Web.Client.Silverlight;component/Images/HelpMedium.png</ImageSource>
+    <ImageSource x:Key="HelpButtonImageLarge">/Macro.ImageViewer.Web.Client.Silverlight;component/Images/HelpLarge.png</ImageSource>
+    <ImageSource x:Key="DropDownButtonIcon">/Macro.ImageViewer.Web.Client.Silverlight;component/Images/DropDownArrow.png</ImageSource>
+
+</ResourceDictionary>
